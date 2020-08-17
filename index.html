@@ -1,0 +1,518 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Macroeconomic Balance Sheet Visualizer</title>
+        <script type="text/javascript">
+            window.onload = function() {
+                window.svgns="http://www.w3.org/2000/svg";  // Added after removing svgweb (which had done this)
+                bsOnload();
+                //addthis.init(); // Delayed load option
+            }
+            setVisibilityNotes = function(isVisible) {
+                document.getElementById('notesDiv').style.display = (isVisible ? 'block' : 'none');
+                document.getElementById('notesDivEnabler').style.display = (isVisible ? 'none' : 'inline');
+                document.getElementById('notesDivDisabler').style.display = (isVisible ? 'inline' : 'none');
+            }
+            setVisibilityTips = function(isVisible) {
+                document.getElementById('tipsDiv').style.display = (isVisible ? 'block' : 'none');
+                document.getElementById('tipsDivEnabler').style.display = (isVisible ? 'none' : 'inline');
+                document.getElementById('tipsDivDisabler').style.display = (isVisible ? 'inline' : 'none');
+            }
+        </script>
+        <link rel="stylesheet" href="./css/common.css" type="text/css" />
+        <link rel="stylesheet" href="./css/btn.css" type="text/css" />
+        <style type="text/css">
+            body,td,a,p,.h {font-family:arial,sans-serif;}
+            em {font-weight:bold; color:darkred; font-style:normal}
+            h1 {font-size: 1.7em; margin-bottom:0em}
+
+            .sectionHeading {color: darkgreen; font-weight: bold}
+            .teaserText {color: grey; font-style:italic;}
+            .actionableText {color: blue; text-decoration: underline; cursor: pointer}
+            .controlLabel {font-style:italic}
+            .deemphasizedLabel {color:#505050; font-style:italic}
+            .errorLabel {color:red; display:none}
+            #notesDiv, #tipsDiv {border:2px grey solid; display:none}
+            #wizardToggleButton {margin-left: 10em;}
+            #controlArea, #wizardArea {margin-bottom: 1em; margin-top: 1em; background-color: lightcyan}
+            #controlArea, #wizardArea, #explanationArea {
+                padding: 2px;
+                border-style: solid;
+                border-color: darkgreen;
+                border-width: 1px;
+            }
+            #wizardArea {display:none}
+            #activeWizardRow {font-weight:bold; background-color:lightgreen}
+            #wizardTable {border-collapse: collapse}
+            #wizardTable td, #wizardTable th {/*border: 1px solid black*/}
+            #wizardTable th {text-align: left; background-color: lightblue;}
+            #wizardDoneDonate {display: none}
+
+            #disqusCommentsLinkSpan {padding-left:50px;font-size:smaller}
+            #shareSpan {position:absolute;padding-left:50px;float:right;width:200px;font-size:smaller}
+            #alsoTrySpan {float:right;font-size:smaller}
+            #copyright {position: absolute; right: 0px; color: #505050; font-size:66%}
+        </style>
+                <!--<script src="../js/bsviz.js"></script>-->
+              <!--  <script type="text/javascript">
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-299930-3']);
+            _gaq.push(['_trackPageview']);
+
+            (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+        </script> -->
+        <meta property="og:title" content="Macroeconomic Balance Sheet Visualizer" />
+        <meta property="og:description" content="An interactive graphical tool for learning how the economy works." />
+        <meta property="og:image" content="http://econviz.org/images/bsVizIcon.png" />
+        <meta itemprop="name" content="Macroeconomic Balance Sheet Visualizer" />
+        <meta itemprop="description" content="An interactive graphical tool for learning how the economy works." />
+        <meta itemprop="image" content="http://econviz.org/images/bsVizIcon.png" />
+    </head>
+
+    <body>
+        <a href="../" class="navButton">
+            <span class="left">
+                <span class="right">
+                    <strong>EconViz.org Home</strong>
+                </span>
+            </span>
+        </a>&nbsp;
+        <span id="disqusCommentsLinkSpan">
+            <i>Discuss:</i>
+            <a href="comments.php#disqus_thread" target="_blank" data-disqus-identifier="macroeconomic-balance-sheet-visualizer">Comments</a>
+        </span>
+
+        <span id="alsoTrySpan"><i>Also try:</i> <a href="../how-the-economy-works-visual-tutorial/">How the Economy Works &mdash; A Visual Tutorial</a></span>
+  
+        <h1>Macroeconomic Balance Sheet Visualizer</h1>
+        <p style="margin-top:0.1em"><i>This is an interactive graphical tool for learning how the economy works. If you are unsure how to begin, please expand and read the notes below, then click the button for the step-by-step walkthrough.</i></p>
+        <!--[if gte IE 9]>
+        <!--div style="color:red;font-weight:bold;background-color:yellow;">If you have issues with this page on Internet Explorer 9, please try a different browser.</div-->
+        <![endif]-->
+        <p><span class="sectionHeading">Please Note:</span>
+            <span id="notesDivEnabler"><span class="teaserText">The goal of this tool...</span>
+                (<span class="actionableText" onclick="setVisibilityNotes(true);">click to expand</span>)</span>
+            <span id="notesDivDisabler" style="display:none">
+                (<span class="actionableText" onclick="setVisibilityNotes(false);">click to hide</span>)</span>
+        </p>
+        <div id="notesDiv">
+            <ul>
+                <li>The goal of this tool is to provide <b>an aid to visualizing and understanding important concepts in macroeconomics</b></span>.
+                    It incorporates key points of emphasis from Post-Keynesian economics, which includes the sub-disciplines of MMT (Modern Monetary Theory, sometimes also referred to as Chartalism) and Circuitism.</li>
+                <li>For more on the economics theory, please visit the blogs of MMT authors such as economist <a href="http://bilbo.economicoutlook.net/blog/?cat=11">Bill Mitchell</a> or <a href="http://moslereconomics.com/">Warren Mosler</a>. Mosler's book, <a href="http://moslereconomics.com/2009/12/10/7-deadly-innocent-frauds/">Seven Deadly Innocent Frauds of Economic Policy</a>, is a longer introduction geared toward a broad audience.
+                    A multi-part <a href="http://neweconomicperspectives.blogspot.com/p/modern-money-primer.html">Modern Money Primer</a> is available at New Economic Perspectives.
+                    There are also papers from the US Federal Reserve and other "authoritative" sources (such as <a href="http://www.bis.org/publ/work292.htm">this BIS paper</a>) that support this modern understanding of bank loans, reserves, and related concepts.</li>
+                <li>I will gradually add new features and operations and work to improve the existing content.</li>
+                <li>Please post corrections and constructive feedback to the comments section of this <a href="http://www.thoughtofferings.com/2010/02/macroeconomic-balance-sheet-visualizer.html">placeholder blog post</a>, or email me at hbl{{at}}econviz[[dot]]org.</li>
+            </ul>
+        </div>
+        <p><span class="sectionHeading">How to Understand and Use This Tool:</span>
+            <span id="tipsDivEnabler"><span class="teaserText">The difference between...</span>
+                (<span class="actionableText" onclick="setVisibilityTips(true);">click to expand</span>)</span>
+            <span id="tipsDivDisabler" style="display:none">
+                (<span class="actionableText" onclick="setVisibilityTips(false);">click to hide</span>)</span>
+        </p>
+        <div id="tipsDiv">
+            <ul>
+                <li>The difference between assets and liabilities is balance sheet equity (also called <i>net worth</i>), and it can be negative. For banks in particular, balance sheet equity is usually referred to as <i>capital</i>. This visualizer displays negative equity on the left side of balance sheets in a similar style to <a href ="http://www.calculatedriskblog.com/2009/04/bank-balance-sheet-liquidity-and.html">Calculated Risk's example</a> and <a href="http://www.calculatedriskblog.com/2009/04/bank-balance-sheet-liquidity-and_26.html">part two</a>.</li>
+                <li>The <b>bottom row of balance sheets represents entire sectors</b> (e.g., all households combined into one balance sheet).</li>
+                <li>The <b>middle row of balance sheets is the real-time summation of the bottom balance sheets</b>. The two aggregatations are "federal government" and "private sector" (ignorning foreign sector, for simplicity, though it could be considered part of the "private sector" aggregation).</li>
+                <li>The <b>top row of balance sheets sums everything below, i.e., the entire economy</b>, and balances to zero equity by definition.</li>
+                <li><em>Point the mouse at an asset in the bottom row to see all corresponding liabilities highlighted</em> (because every financial asset is somebody else's liability), <em>and vica versa</em>.</li>
+                <li><em>Point the mouse at an aggregate statistic (the orange money and debt bars) to see what it is composed of</em>.</li>
+                <li><em>Choose an operation in the menu below the balance sheets, and click 'Run Op'</em> to see the balance sheet transition animated.
+                    To watch again, click 'Replay Op'.
+                    Alternatively, you can click 'Reverse Op' to run the operation backwards, then click 'Run Op' again.</li>
+                <li><em>Point the mouse at the name below a balance sheet to see a floating copy of how it looked before the last operation</em>, so as to more easily see what changed.</li>
+                <li>You can edit the <i>operation size</i>.</li>
+                <li>The 'Reset Diagram' button restores the default set of sample values to all the balance sheets. These are made up numbers for simple illustration, not real economic data.</li>
+                <li>The assets and liabilities with a yellow border <i>during animation</i> of an operation are those being directly modified by the operation.</li>
+                <li>This page shows <b>only <i>financial</i> assets and liabilities</b>. Tangible assets (machinery, real estate, etc) are an important part of real world balance sheets also, but are not affected in the same way by the various financial operations shown here.</li>
+                <li>Excluded for simplicity: state and local governments, the foreign sector, and non-profits.</li>
+            </ul>
+        </div>
+        <p><span class="sectionHeading">Interactive Economy-Wide Financial Balance Sheet Diagram:</span>
+            <button id="wizardToggleButton" onclick="toggleWizardMode()">Turn ON Step-by-Step Walkthrough</button>
+        </p>
+                <svg width="1000" height="586"
+            style="background-color: #FFFFFF; display: block; margin-bottom: 5px;"
+            id="embeddedSVG">
+                
+                </svg>
+
+        <div id="wizardArea">
+            <span class="sectionHeading">Step-by-Step Walkthrough is Active:</span> <span id="wizardTotalSteps"></span><br/>
+            <table id="wizardTable">
+                <tr>
+                    <th>Step #</th><th>Action</th><th>Operation</th><th>Comments</th>
+                </tr>
+                <tr>
+                    <td><span id="wizardPrevStepNum"></span> (Prior)</td>
+                    <td><button id="wizardPrevButton" onclick="BalanceSheetWizard_stepPrev()">Back To This --></button></td>
+                    <td><span id="wizardPrevStepOp"></span></td>
+                    <td><span id="wizardPrevStepComments"></span></td>
+                </tr><tr id="activeWizardRow">
+                    <td><span id="wizardCurrStepNum"></span> (Current)</td>
+                    <td><button id="wizardReplayButton" onclick="BalanceSheetWizard_stepReplay()">Replay This --></button></td>
+                    <td><span id="wizardCurrStepOp"></span></td>
+                    <td><span id="wizardCurrStepComments"></span></td>
+                </tr><tr>
+                    <td><span id="wizardNextStepNum"></span> (Next)</td>
+                    <td><button id="wizardNextButton" onclick="BalanceSheetWizard_stepNext()">Run This --></button></td>
+                    <td><span id="wizardNextStepOp"></span></td>
+                    <td><span id="wizardNextStepComments"></span><span id="wizardDoneDonate">
+                            <!--<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" style="margin: 0em;">
+                                <input type="hidden" name="cmd" value="_s-xclick">
+                                <input type="hidden" name="hosted_button_id" value="ESSJ2PCPKW9WS">
+                                <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                                <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                                <i>TIP JAR: </i> Has this visualizer helped you and you'd like to "Run Op" for a real life balance sheet transfer?
+                            </form>-->
+                        </span></td>
+                </tr>
+            </table>
+        </div>
+        <div id="controlArea">
+            <span class="controlLabel">Choose Operation:</span> <select id="opSelect" onChange="selectionChangedClick(this)">
+                <option value="privatespending" selected>Private Spending</option>
+                <option value="governmentspending">Government Spends</option>
+                <option value="governmenttaxes">Government Taxes</option>
+                <option value="governmentdebtissuance">Government Issues Debt</option>
+                <option value="consolidatedgovernmentspending">Government Spends (Consolidated)</option>
+                <option value="governmentspendingnobonds">Government Spends (Without Borrowing)</option>
+                <option value="withdrawcurrency">Bank Customer Withdraws Currency</option>
+                <option value="depositcurrency">Bank Customer Deposits Currency</option>
+                <option value="bankloan">Bank Loan</option>
+                <option value="bankloaninterest">Borrower Pays Interest on Bank Loan</option>
+                <option value="bankloanrepayment">Borrower Repays Principal from Bank Loan</option>
+                <option value="bankloandefault">Borrower Defaults on Bank Loan</option>
+                <option value="bondissuance">Private Bond Issued</option>
+                <option value="bondinterest">Private Bond Interest Paid</option>
+                <option value="bondrepayment">Private Bond Principal Repaid</option>
+                <option value="bonddefault">Private Bond Defaulted On</option>
+                <option value="bankloansecuritize">Bank Loan is Securitized</option>
+                <option value="qe">Quantitative Easing (Variation 1 - Households Sell)</option>
+                <option value="qebanks">Quantitative Easing (Variation 2 - Banks Sell)</option>
+                <option value="omoraiserates">Open Market Ops: Raise Rates Toward Target</option>
+                <option value="omolowerrates">Open Market Ops: Lower Rates Toward Target</option>
+                <option value="governmentdebtissuancettl">Government Issues Debt (Banks Buy via TT&L)</option>
+                <option value="treasurymovesttl">Treasury Moves Funds from Bank TT&L to Central Bank</option>
+            </select>
+            <span class="controlLabel">Size:</span> <input type="text" id="opAmountText" value="30" size="5"/>
+            <button onclick="doActionClick()">Run Op</button>
+            <button onclick="replayActionClick()" id="replayOpButton" disabled="disabled">Replay Op</button>
+            <button onclick="reverseActionClick()">Reverse Op</button>
+            <button onclick="resetBalanceSheetsClick()">Reset Diagram</button>
+            <div id="errorLabel" class="errorLabel"><b>Invalid Operation</b>: One or more balance sheets has insufficient assets or liabilities. Try another operation first or reset the balance sheets.</div>
+        </div>
+        <div id="explanationArea">
+            <span class="sectionHeading">Explanation of selected operation<span id="opDetailsOpName"></span>:</span>
+            <!--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <span class="deemphasizedLabel">[<a href="./" id="oplink">Direct link</a> to this operation]</span>-->
+            <br/>
+
+            <div id="privatespending" style="display:block">
+                <ul>
+                    <li>In this example, households buy goods and/or services from companies.</li>
+                </ul><ul>
+                    <li><b>The result is a transfer of financial balance sheet equity from buyer to seller.</b>
+                        Please note that although physical goods may have been exchanged, tangible assets are excluded from the visualizer for the sake of illustrating financial flows.</li>
+                    <li>The purchase generates income for the seller, and contributes to Gross Domestic Product (which measures a nation's total income).</li>
+                </ul>
+            </div>
+            <div id="governmentspending" style="display:none">
+                <ul>
+                    <li>In this example, the federal government (via the treasury) buys goods and/or services from the household sector.
+                        The income flowing to the household sector is deposited into bank accounts.</li>
+                    <li><i>A Related Operation (Not Shown Here):</i> When the government pays interest on its treasury liabitilities (e.g., treasury bonds), the balance sheet impact is identical to what is shown here.</li>
+                </ul><ul>
+                    <li>For most countries during most time periods, the domestic private sector on aggregate desires to net save (i.e., spend less than it earns.)
+                        The government facilitates this by running deficits (i.e., spending more than it taxes).
+                        <b>The effect is that government makes its own financial balance sheet equity more negative in order to increase the balance sheet equity (wealth) of the private sector.</b></li>
+                    <li>The treasury spends by reducing its deposit account balance (held at the central bank) and increasing the reserve balance at the bank where the recipient of the spending has an account.
+                        The recipient's (in this case, household's) bank deposits rise to match.</li>
+                    <li><b>As emphasized by Modern Monetary Theory, there is no theoretical limit to this spending for a government that issues its own non-convertible currency.</b>
+                        To see this, run the <i>"Government Issues Debt"</i> operation next, and then you can repeat <i>"Government Spends"</i> once again.
+                        To aid in visualizing the result, the <i>"Government Spends (Consolidated)"</i> operation combines these other two operations into one.
+                        Another approach available to the government is shown in the <i>"Government Spends (Without Borrowing)"</i> combined operation.
+                    <li>In this example, the banking sector expands its assets and liabilities (due to increased deposits), but its equity is unchanged.</li>
+                    <li>Government spending generates income for the private sector, and contributes to Gross Domestic Product.</li>
+                </ul>
+            </div>
+            <div id="governmenttaxes" style="display:none">
+                <ul>
+                    <li>In this example, the federal government (via the treasury) collects taxes from the household sector.</li>
+                </ul><ul>
+                    <li>Though most taxes are levied on income flows rather than on existing stocks of savings, taxation reduces the private sector's balance sheet equity (wealth) and ultimately its spending power.
+                        <b>A government that controls its own non-convertible currency does NOT tax to "save up" in order to enable future spending, because such a government is never revenue-constrained</b> &mdash; see the <i>"Government Spends (Consolidated)"</i> and <i>"Government Spends (Without Borrowing)"</i> operations.
+                        The main role of taxation is to limit aggregate demand (government plus private sector) so demand does not exceed the economy's productive capacity and cause inflation to accelerate.</li>
+                    <li>The aggregate balance sheet impact of taxation is the opposite of that of government spending.</li>
+                    <li>Tax payments by households reduce their bank deposits.</li>
+                    <li>Banking sector assets and liabilities shrink as a result of reduced deposits, but bank equity is unchanged.</li>
+                </ul>
+            </div>
+            <div id="governmentdebtissuance" style="display:none">
+                <ul>
+                    <li>In this example, the government sells treasury securities (bonds, bills, and notes) to the household sector.</li>
+                    <li>An alternate scenario in which the government sells debt to commercial banks via TT&L accounts is available later in the menu of operations.</li>
+                </ul><ul>
+                    <li>The impact on household balance sheets is best summarized as an asset swap &mdash; households give up bank deposits in exchange for treasuries.
+                        Treasuries typically have a higher yield than bank deposits, and due to the positive net savings rate desired by the private sector, there are always willing buyers of treasuries.</li>
+                    <li><b>This operation shows how the Treasury typically expands its balance sheet &mdash; its assets expand with added central bank liabilities (extracted from the private sector) and its liabilities expand with new treasury debt (with the private sector holding the corresponding asset, treasury securities).</b></li>
+                </ul>
+            </div>
+            <div id="consolidatedgovernmentspending" style="display:none">
+                <ul>
+                    <li>This operation combines two others: <i>"Government Spends"</i> and <i>"Government Issues Debt"</i>. Try them in turn and then try this to see that it has the same net effect.</li>
+                    <li>This example shows the government spending money on the household sector, but mechanics would be comparable with government spending on the corporate sector.</li>
+                </ul><ul>
+                    <li><b>The effect of this combined operation is that the treasury generates income and wealth for the private sector by increasing the private sector's assets (treasuries) and thus also its balance sheet equity.</b>
+                        The private sector on aggregate generally desires to net save (spend less than it earns), a process that is facilitated by government deficits.</li>
+                    <li>This visualization of aggregate sector-wide balance sheets obscures some of the details within each sector.
+                        For example, <b>it might not be the household initially paid by the government who buys the treasuries &mdash; instead the first household might spend on other private sector goods and services and it would be the recipients of the secondary spending (and beyond, as the spending propagates through the economy) who ultimately buy the treasuries.</b></li>
+                    <li>One objection might be that the treasury could fail to sell the bonds and thus be unable to replenish its own assets (deposits), but the reality is that these <b>treasury auctions never fail for a sovereign nation that issues its own non-convertible currency (like the US) because the market knows that the government (treasury and central bank together) never have any possibility of default other than for purely political reasons.</b>
+                        Even in the European Monetary Union (whose member countries do not control their own currencies and are somewhat analagous to US States), the European Central Bank has since mid 2010 been buying sovereign bonds of Greece and other countries in the secondary market, a process limited only by politics.</li>
+                    <li>Note that this combined operation doesn't even involve the Central Bank!
+                        The Central Bank's role is simply to transform the "right" number of treasuries into reserves and currency to set interest rates and to provide a transaction-friendly money supply (currency and reserves).
+                        The Central Bank's operations just remove one type of financial asset from the non-government sector and give it another kind of financial asset in exchange.</li>
+                </ul>
+            </div>
+            <div id="governmentspendingnobonds" style="display:none">
+                <ul>
+                    <li>This combined operation shows why <b>a sovereign government that issues its own non-convertible currency is never revenue constrained.</b>
+                        That is, the consolidated government (treasury plus central bank) can always spend if desired without taxing or issuing bonds either beforehand or afterwards.</li>
+                    <li>In this example the government spending flows to the household sector, but spending on the corporate sector would look comparable.</li>
+                </ul><ul>
+                    <li>Governments currently do not use this spending approach, but they could if desired.
+                        As it is, the private sector (including the foreign sector) is always happy to buy interest-bearing government debt (i.e., federal bond auctions never fail.)
+                        See the operation <i>"Government Spends (Consolidated)"</i>.</li>
+                    <li>In the US, gold standard era laws are still in place that prevent the central bank from buying debt directly from the treasury in the manner shown here.
+                        However, those same laws allow the central bank to buy treasury debt on the secondary market.
+                        The latter approach simply adds two extra steps to the process (the treasury sells debt to primary dealers who know the central bank stands ready to buy the debt from them immediately afterwards.)</li>
+                    <li>Some MMT authors have discussed alternate approaches that they consider may have policy benefits:
+                        <ul><li>While there is no operational necessity to doing so, some would combine the treasury and central bank (largely eliminating the central bank).
+                                As such there might be a single balance sheet with reserves (and possibly treasuries, if the government chose to issue debt) as liabilities.</li>
+                            <li>Alternatively, some MMT authors suggest that the treasury could run an "overdraft" at the central bank (i.e., the "treasury deposits" account balance would be negative) to facilitate deficit spending without any bond issuance.
+                                On the balance sheets, the negative balance might be recorded <i>as treasury liabilities</i> linked to corresponding central bank assets.</li>
+                        </ul></li>
+                </ul>
+            </div>
+            <div id="withdrawcurrency" style="display:none">
+                <ul>
+                    <li>In this example, a household withdraws currency (notes and coins), perhaps for use in making cash payments.
+                        (Or perhaps to store under a mattress!)</li>
+                </ul><ul>
+                    <li>Household bank deposits are replaced by currency on the asset side of the balance sheet.</li>
+                    <li>Bank balance sheets shrink as assets (currency) and liabilities (deposits) are reduced.</li>
+                    <li>If banks run low on currency, the central bank can exchange reserves and currency as needed (an operation not shown in this tool).</li>
+                </ul>
+            </div>
+            <div id="depositcurrency" style="display:none">
+                <ul>
+                    <li>In this example, a household deposits currency (notes and coins) to a bank deposit account.</li>
+                </ul><ul>
+                    <li>This is the opposite to <i>"Bank Customer Withdraws Currency"</i> &mdash; please see that operation.</li>
+                </ul>
+            </div>
+            <div id="bankloan" style="display:none">
+                <ul>
+                    <li>In this example, a bank lends money to a household (but a loan could also be to a company.)</li>
+                </ul><ul>
+                    <li>Both bank and household balance sheets expand with new assets and liabilities, but neither's balance sheet equity changes.</li>
+                    <li>Both broad money supply and private sector debt are increased.</li>
+                    <li><b>Loans create deposits! Banks do not lend out reserves!</b></li>
+                    <li>Bank lending is not reserve-constrained because even in countries with reserve ratios, any reserves needed can be obtained <i>after</i> lending.
+                        <b>The primary constraint on lending is the ability of banks to find credit-worthy borrowers who want loans.</b>
+                        A secondary consideration is regulatory capital ratios (the amount of balance sheet equity required relative to risky assets such as loans).
+                        But capital ratio rules are not a constraint at the macroeconomic level because healthy banks can easily raise additional capital through the equity markets to support additional lending, and ongoing earnings also add to capital.
+                        Rather, capital ratios are intended to ensure large enough "shock absorbers" in the case of too many defaulting loans, since loan defaults reduce balance sheet equity.</li>
+                    <li>In some countries, banks still have reserve ratios (a required quantity of reserves relative to customer deposits), but these rules were only necessary under the gold standard. Reserve ratios are never a constraint on lending &mdash; banks lend first and find the necessary reserves afterward.</li>
+                    <li>The central bank ensures there are always enough reserves in the system to meet banks' liquidity needs (since reserves are used for inter-bank payments, for example to clear checks between banks). Banks can borrow reserves from each other or from the central bank (which acts as lender of last resort.)
+                        The central bank also conducts open market operations that continually provide the "right" level of reserves to the banking system while maintaining a specified target for the overnight interest rate (for interbank lending of reserves).</li>
+                    <li>See the <i>"Open Market Ops: Raise Rates Toward Target"</i> and <i>"Open Market Ops: Lower Rates Toward Target"</i> visualizer operations.
+                        If aggregate bank lending in the economy is expanding, reserves will become relatively more scarce, and the <i>"Open Market Ops: Lower Rates Toward Target"</i> operation shows the way reserves typically would expand during open market operations after aggregate lending expands.</li>
+                </ul>
+            </div>
+            <div id="bankloaninterest" style="display:none">
+                <ul>
+                    <li>In this example, a household pays loan interest to the bank that made the loan.</li>
+                </ul><ul>
+                    <li>A loan interest payment results in a transfer of balance sheet equity from the borrower to the bank.
+                        (Much like occurs during private sector spending.)</li>
+                </ul>
+            </div>
+            <div id="bankloanrepayment" style="display:none">
+                <ul>
+                    <li>In this example, a household repays some (or all) of the principal from a bank loan.</li>
+                </ul><ul>
+                    <li>The effect on balance sheets is the exact reverse of the loan origination &mdash; bank and household balance sheets both shrink, but balance sheet equity is unchanged.</li>
+                    <li>Both broad money supply and private sector debt are reduced by the amount of the repayment.</li>
+                </ul>
+            </div>
+            <div id="bankloandefault" style="display:none">
+                <ul>
+                    <li>In this example, a household defaults on some (or all) of its bank loan.</li>
+                </ul><ul>
+                    <li>During default, the individual household's liability (loan obligation) is reduced, as is the bank's corresponding asset (loan).
+                        Bank balance sheet equity is reduced, and household balance sheet equity increased.</li>
+                    <li>The use of an aggregate household balance sheet in the visualizer obscures some of the details occurring within the household sector.
+                        <b>When filing for bankruptcy, an individual household is likely to be insolvent (i.e., have negative balance sheet equity)</b> but when you add in all the other households with positive equity, the sector-wide "Households" balance sheet that you see here has positive equity.</li>
+                    <li>Even if the defaulting household started out with negative equity (liabilities exceeding assets), the default removes liabilities and thus increases the household's equity.</li>
+                    <li>A defaulting household likely would have spent the loan proceeds on goods and services in the broader economy before eventually needing to file for bankruptcy.
+                        From a macroeconomic balance sheet perspective, <b>the combination of a new bank loan and then a default on that loan is equivalent to the bank giving a "gift" of currency to the rest of the economy, which the recipients deposit back to an account at the bank.
+                            In other words, it is a transfer of balance sheet equity from the bank to others.</b>
+                        Banks suffering too many defaults can become insolvent (negative equity) or at least fall below regulatory minimums for capital, requiring bankruptcy, private capital infusion, government forbearance, or government bailout.</li>
+                    <li>Loan defaults reduce private debt but not broad money supply (since the deposits resulting from the original loan are still in circulation outside the bank, at a cost to the bank's balance sheet equity).</li>
+                </ul>
+            </div>
+            <div id="bondissuance" style="display:none">
+                <ul>
+                    <li>In this example, a company issues a bond that is bought by a household.</li>
+                </ul><ul>
+                    <li>"Horizontal" borrowing of this sort (i.e., within the private sector) expands the balance sheet of the borrower with a new asset and liablity (and no change in balance sheet equity).</li>
+                    <li>The lender simply has one asset (deposits or currency) transformed into another asset (a bond).</li>
+                    <li>Non-bank borrowing increases private sector debt but not money supply.</li>
+                    <li>Too much horizontal borrowing can make an economy more vulnerable to crisis.
+                        The most severe manifestation of this is "debt deflation", first described by Irving Fisher in the context of the Great Depression.</li>
+                </ul>
+            </div>
+            <div id="bondinterest" style="display:none">
+                <ul>
+                    <li>In this example, a company pays interest on its bond to the lender (a household).</li>
+                </ul><ul>
+                    <li>As in the cases of bank loan interest payment and private spending, this operation transfers balance sheet equity from one entity to another.</li>
+                </ul>
+            </div>
+            <div id="bondrepayment" style="display:none">
+                <ul>
+                    <li>In this example, a company repays some or all of its bond obligation to a household.</li>
+                </ul><ul>
+                    <li>The borrower's assets (bank deposits) and liabilities (bonds) are reduced but its balance sheet equity doesn't change.
+                        The lender's corresponding bond asset is transformed back to a deposit asset.</li>
+                    <li>Private sector debt is reduced but broad money supply is unchanged.</li>
+                </ul>
+            </div>
+            <div id="bonddefault" style="display:none">
+                <ul>
+                    <li>In this example, a corporate borrower defaults on some or all of its bond at the expense of the household lender.</li>
+                </ul><ul>
+                    <li>Borrower liabilities (bonds) are reduced and lender assets (bonds) are similarly reduced.</li>
+                    <li>Bond issuance followed by default is roughly equivalent to a gift of balance sheet equity from the lender to the borrower.</li>
+                    <li>Private sector debt is reduced but broad money supply is unchanged.</li>
+                </ul>
+            </div>
+            <div id="bankloansecuritize" style="display:none">
+                <ul>
+                    <li>In this example, an existing bank loan is securitized and sold to a company that wishes to hold it as an investment.</li>
+                </ul><ul>
+                    <li>The bank's loan asset moves to the asset side of the corporate balance sheet in the form of a securitized loan.
+                        The company's bank deposits are reduced, as are the corresponding deposit liabilities of the bank.
+                        Because this is an asset transfer and portfolio shift, neither party sees a change in balance sheet equity.</li>
+                    <li>Broad money supply is reduced but private sector debt is unchanged.</li>
+                    <li><b>From a purely balance sheet perspective, the combination of a new bank loan and then its securitization and sale to a non-bank is equivalent to a private sector bond offering</b>, and likewise results in debt increasing faster than money.</li>
+                    <li>Like other forms of private sector borrowing, a large volume of loan securitization has contributed to dramatic increases in private sector debt to GDP ratios in some economies, increasingly the economies' vulnerability to crisis.</li>
+                </ul>
+            </div>
+            <div id="qe" style="display:none">
+                <ul>
+                    <li>Quantitative Easing (QE) involves the central bank buying treasuries (or in some cases private sector securities) from the private sector by paying with newly created reserves.</li>
+                    <li>This example shows <i>households</i> selling treasuries (via the primary dealers as intermediaries).
+                        However, any private sector entities can sell treasuries during QE, including the primary dealers themselves.</li>
+                </ul><ul>
+                    <li><b>Quantitative easing simply swaps one type of asset on private sector balance sheets (typically treasuries) for another type (deposits backed by bank reserves, or simply bank reserves if a bank did the selling.)</b></li>
+                    <li>QE effectively changes the duration mix of outstanding government liabilities toward more short term liabilities and less long term ones.
+                        As such, it is roughly equivalent to if the treasury had previously chosen to issue relatively more T-Bills (short duration) and less bonds (long duration).</li>
+                    <li>No sectors (or entities within sectors) see any change in balance sheet equity as a direct result of QE.
+                        Therefore, <b>there is no meaningful increase in the private sector's purchasing power or propensity to spend</b>.
+                        At the level of each individual household or firm who might sell to the Fed during QE, <b>decisions regarding investment portfolio composition tend to be made independently from decisions about how much to spend versus hold in an investment portfolio</b> &mdash; so a change in the portfolio mix (cash, bonds, stocks, etc) won't cause more spending.
+                        Also, treasuries are almost as liquid as "money" and anyone previously holding treasuries could have easily sold them to support any planned spending.</li>
+                    <li>The central bank balance sheet expands as it draws in assets from the private sector and creates new liabilities (reserves) to match.</li>
+                    <li>Modern Monetary Theorists point out that from a macroeconomic perspective, <b>QE includes a deflationary impulse</b> because is it replaces a higher yielding asset (treasuries) with a lower yielding asset (money), reducing the interest income paid to the private sector by the government!
+                        As such it is comparable to the removal of some fiscal stimulus, though the extent to which aggregate demand is impacted in each case could differ depending on targeting (i.e., those earning treasury bond income may have a different propensity to spend from the initial recipients of fiscal stimulus related spending.)</li>
+                    <li>Broad money and base money both increase when households do the selling (however, when banks are the ones deciding to sell treasuries, broad money does not increase).
+                        <b>QE does not lead to loan-driven inflation now or in the future, as banks never lend out reserves or are reserve constrained</b>, rather loans create deposits (see <i>"Bank Loan"</i> operation).</li>
+                    <li>QE is sometimes argued to lead to asset price inflation as the holders of now more numerous low yielding deposits and currency may bid up asset prices (stocks, commodities, real estate, etc) in a search for yield, but whether this leads to inflation in the real economy depends on the extent to which this induces a subsequent and ongoing increase in private sector demand for goods and services.
+                        <b>The existence of a transmission mechanism from QE to sustained inflation in goods and services is highly questionable.</b>
+                        Any psychology-driven increase in asset price valuation multiples is unlikely to be sustained, since real earnings underlying the assets are unlikely to grow as fast as expected by who assume QE directly stimulates the economy.
+                        For example, Japan has engaged in multiple rounds of quantitative easing since the early 2000s with no discernable impacts on the real economy and certainly no growth in inflation (Japan has moved in and out of mild deflation). Japan expert Richard Koo calls QE the "greatest monetary non-event."</li>
+                    <li>Ultimately, the private sector controls the size of the broad money supply as a consequence of its borrowing decisions and portfolio adjustment decisions.
+                        Some theory and evidence support the idea that the private sector can "undo" the increase in deposits that results from QE!
+                        See the post <a href="http://www.thoughtofferings.com/2011/06/visual-guide-to-endogenous-money-and.html">"A Visual Guide to Endogenous Money and the Failure of QE"</a> and its predecessors for a detailed explanation.</li>
+                </ul>
+            </div>
+            <div id="qebanks" style="display:none">
+                <ul>
+                    <li>Quantitative Easing (QE) involves the central bank buying treasuries (or in some cases private sector securities) from the private sector by paying with newly created reserves.</li>
+                    <li>This example shows <i>commercial banks</i> selling treasuries (via the primary dealers as intermediaries, who as such may choose to sell some of their own treasuries).
+                        However, any private sector entities can sell treasuries (via the primary dealers) during QE, including households, businesses, pension funds, etc.</li>
+                </ul><ul>
+                    <li>Please see the similar operation <i>"Quantitative Easing (Variation 1 - Households Sell)"</i> for detailed commentary.</li>
+                </ul>
+            </div>
+            <div id="omoraiserates" style="display:none">
+                <ul>
+                    <li>During open market operations to push the overnight interest rate <i>up</i> toward the current target rate, the central bank sells treasuries to banks, who pay with reserves (thus swapping reserves for treasuries on the asset side of their balance sheet).</li>
+                </ul><ul>
+                    <li>Open market operations by the central bank are used to set the supply of reserves in the banking system in order that the short-term (overnight) interest rate hits the central bank's policy target.
+                        <b>The central bank is really targeting rates, not targeting specific quantities of reserves</b>, though quantities do change as part of the process.</li>
+                    <li>To raise the overnight rate toward the policy target, the central bank sells government debt, in exchange debiting reserves from the banking system.
+                        This decreases the supply of reserves that are loanable between banks in the overall banking system (banks need reserves to meet reserve requirements and clear payments), thus raising the overnight interest rate toward the current target rate.
+                    <li>The operation shown represents traditional open market operations, but central banks use other tools as well, such as:
+                        <ul><li>The discount rate (also known as the penalty rate) is the rate at which banks can borrow directly from the central bank.</li>
+                            <li>Recently the US central bank (Federal Reserve) has paid interest on reserves at a support rate, which sets a floor for interest rates as a means of achieving the target rate.</li></ul>
+                    </li>
+                </ul>
+            </div>
+            <div id="omolowerrates" style="display:none">
+                <ul>
+                    <li>During open market operations to push the overnight interest rate <i>down</i> toward the current target rate, the central bank buys treasuries from banks, who receive reserves as payment (thus swapping treasuries for reserves on the asset side of their balance sheet).</li>
+                    <li>If you get an "Invalid Operation" error running this, try the operation <i>"Open Market Ops: Raise Rates Toward Target"</i> first to ensure some treasuries are on banks' balance sheet in the visualizer.</li>
+                </ul><ul>
+                    <li>Open market operations by the central bank are used to set the supply of reserves in the banking system in order that the short-term (overnight) interest rate hits the central bank's policy target.
+                        <b>The central bank is really targeting rates, not targeting specific quantities of reserves</b>, though quantities do change as part of the process.</li>
+                    <li>To lower the overnight rate toward the policy target, the central bank buys government debt and pays with newly created reserves, thus increasing the supply of reserves that are loanable between banks in the overall banking system (banks need reserves to meet reserve requirements and clear payments).
+                        This lowers the interest rate toward the current target rate.
+                    <li>The operation shown represents traditional open market operations, but central banks use other tools as well, such as:
+                        <ul><li>The discount rate (also known as the penalty rate) is the rate at which banks can borrow directly from the central bank.</li>
+                            <li>Recently the US central bank (Federal Reserve) has paid interest on reserves at a support rate, which sets a floor for interest rates as a means of achieving the target rate.</li></ul>
+                    </li>
+                </ul>
+            </div>
+            <div id="governmentdebtissuancettl" style="display:none">
+                <ul>
+                    <li>In this example, a commercial bank (known as a Special Depository) buys debt issued by the treasury.</li>
+                </ul><ul>
+                    <li>This is step two of the process outlined by <a href="http://neweconomicperspectives.blogspot.com/2010/11/yes-government-bonds-add-to-private.html">Stephanie Kelton in this blog post</a>. As she notes:</li>
+                    <li>The treasury sells debt to the commercial bank, and the commercial bank pays for these bonds by crediting the treasury's TT&L (Treasury Tax & Loan) account.</li>
+                    <li>This is analogous to a bank acquiring a loan by crediting the borrower's account. It does not "cost" the bank anything. No existing resources (reserves) are spent when the bond is acquired.</li>
+                    <li>The commercial bank gets the bonds (assets) and the treasury gets a credit to its TT&L account at the commercial bank.</li>
+                </ul>
+            </div>
+            <div id="treasurymovesttl" style="display:none">
+                <ul>
+                    <li>In this example, the treasury plans to spend and places a "call" on its TT&L (Treasury Tax & Loan) account at a commercial bank &mdash; this involves it moving funds from an account at the commercial bank to an account at the central bank.</li>
+                </ul><ul>
+                    <li>This is step three of the process outlined by <a href="http://neweconomicperspectives.blogspot.com/2010/11/yes-government-bonds-add-to-private.html">Stephanie Kelton in this blog post</a>. As she notes:</li>
+                    <li>In anticipation of its imminent spending, the treasury places a "call" on its TT&L account.</li>
+                    <li>This is a formal direction that instructs the commercial bank to transfer funds from its TT&L account to the treasury's account at the central bank.</li>
+                    <li>Because the treasury is moving its account out of the commercial bank, the commercial bank experiences a loss of reserves.</li>
+                    <li>The central bank changes its balance sheet to indicate that the treasury has added to its account at the central bank, and commercial bank has reduced its reserve account.</li>
+                </ul>
+            </div>
+        </div>
+        <p id="copyright">Copyright &copy; 2009-2013 EconViz.org</p>
+<script type="text/javascript">
+    var disqus_shortname = 'econviz';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+    </body>
+</html>
