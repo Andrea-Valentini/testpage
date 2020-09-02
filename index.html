@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
     <head>
-        <title>Visualiseur du bilan macroéconomique</title>
+        <title>Macroeconomic balance sheet visualizer </title>
         <script type="text/javascript">
             window.onload = function() {
                 window.svgns="http://www.w3.org/2000/svg";  // Added after removing svgweb (which had done this)
@@ -88,8 +88,8 @@
 
         <span id="alsoTrySpan"><i>Also try:</i> <a href="../how-the-economy-works-visual-tutorial/">How the Economy Works &mdash; A Visual Tutorial</a></span>
   
-        <h1>Visualiseur du bilan macroeconomique</h1>
-        <p style="margin-top:0.1em"><i>This is an interactive graphical tool for learning how the economy works. If you are unsure how to begin, please expand and read the notes below, then click the button for the step-by-step walkthrough.</i></p>
+        <h1>Visualiseur du bilan macroéconomique</h1>
+        <p style="margin-top:0.1em"><i>Un outil graphique interactif pour apprendre comment fonctionne l'économie. Si vous n'êtes pas sûr de savoir comment commencer, veuillez développer et lire les notes ci-dessous, puis cliquez sur le bouton pour la présentation étape par étape.</i></p>
         <!--[if gte IE 9]>
         <!--div style="color:red;font-weight:bold;background-color:yellow;">If you have issues with this page on Internet Explorer 9, please try a different browser.</div-->
         <![endif]-->
@@ -101,38 +101,38 @@
         </p>
         <div id="notesDiv">
             <ul>
-                <li>sadasda The goal of this tool is to provide <b>an aid to visualizing and understanding important concepts in macroeconomics</b></span>.
-                    It incorporates key points of emphasis from Post-Keynesian economics, which includes the sub-disciplines of MMT (Modern Monetary Theory, sometimes also referred to as Chartalism) and Circuitism.</li>
-                <li>For more on the economics theory, please visit the blogs of MMT authors such as economist <a href="http://bilbo.economicoutlook.net/blog/?cat=11">Bill Mitchell</a> or <a href="http://moslereconomics.com/">Warren Mosler</a>. Mosler's book, <a href="http://moslereconomics.com/2009/12/10/7-deadly-innocent-frauds/">Seven Deadly Innocent Frauds of Economic Policy</a>, is a longer introduction geared toward a broad audience.
-                    A multi-part <a href="http://neweconomicperspectives.blogspot.com/p/modern-money-primer.html">Modern Money Primer</a> is available at New Economic Perspectives.
-                    There are also papers from the US Federal Reserve and other "authoritative" sources (such as <a href="http://www.bis.org/publ/work292.htm">this BIS paper</a>) that support this modern understanding of bank loans, reserves, and related concepts.</li>
+                <li>L'objectif de cet outil est de fournir une aide à la visualisation et à la compréhension des concepts importants en macroéconomie.</b></span>.
+                    Il presente des points clé de la MMT </li>
+                <li>Pour en savoir plus sur la théorie économique, veuillez consulter les blogs des auteurs  MMT tels que economist <a href="http://bilbo.economicoutlook.net/blog/?cat=11">Bill Mitchell</a> ou <a href="http://moslereconomics.com/">Warren Mosler</a>. Le livre de Mosler, <a href="http://moslereconomics.com/2009/12/10/7-deadly-innocent-frauds/">Seven Deadly Innocent Frauds of Economic Policy</a>est une introduction plus brève, destinée à un plus grand public.
+                    Une version en plusieurs parties de <a href="http://neweconomicperspectives.blogspot.com/p/modern-money-primer.html">Modern Money Primer</a> est disponible sur le site des Nouvelles perspectives économiques.
+                    Voici également des documents de la Réserve fédérale américaine et d'autres sources " fiables ".  (comme par exemple <a href="http://www.bis.org/publ/work292.htm">ce docuòent de la BIS</a>) qui soutiennent cette compréhension moderne des prêts bancaires, des réserves et des concepts connexes.</li>
                 <li>I will gradually add new features and operations and work to improve the existing content.</li>
-                <li>Please post corrections and constructive feedback to the comments section of this <a href="http://www.thoughtofferings.com/2010/02/macroeconomic-balance-sheet-visualizer.html">placeholder blog post</a>, or email me at hbl{{at}}econviz[[dot]]org.</li>
+                <!--<li>Please post corrections and constructive feedback to the comments section of this <a href="http://www.thoughtofferings.com/2010/02/macroeconomic-balance-sheet-visualizer.html">placeholder blog post</a>, or email me at hbl{{at}}econviz[[dot]]org.</li-->
             </ul>
         </div>
-        <p><span class="sectionHeading">How to Understand and Use This Tool:</span>
-            <span id="tipsDivEnabler"><span class="teaserText">The difference between...</span>
+        <p><span class="sectionHeading">Comment comprendre et utiliser cet outil:</span>
+            <span id="tipsDivEnabler"><span class="teaserText">La différence entre les...</span>
                 (<span class="actionableText" onclick="setVisibilityTips(true);">click to expand</span>)</span>
             <span id="tipsDivDisabler" style="display:none">
                 (<span class="actionableText" onclick="setVisibilityTips(false);">click to hide</span>)</span>
         </p>
         <div id="tipsDiv">
             <ul>
-                <li>The difference between assets and liabilities is balance sheet equity (also called <i>net worth</i>), and it can be negative. For banks in particular, balance sheet equity is usually referred to as <i>capital</i>. This visualizer displays negative equity on the left side of balance sheets in a similar style to <a href ="http://www.calculatedriskblog.com/2009/04/bank-balance-sheet-liquidity-and.html">Calculated Risk's example</a> and <a href="http://www.calculatedriskblog.com/2009/04/bank-balance-sheet-liquidity-and_26.html">part two</a>.</li>
-                <li>The <b>bottom row of balance sheets represents entire sectors</b> (e.g., all households combined into one balance sheet).</li>
-                <li>The <b>middle row of balance sheets is the real-time summation of the bottom balance sheets</b>. The two aggregatations are "federal government" and "private sector" (ignorning foreign sector, for simplicity, though it could be considered part of the "private sector" aggregation).</li>
-                <li>The <b>top row of balance sheets sums everything below, i.e., the entire economy</b>, and balances to zero equity by definition.</li>
-                <li><em>Point the mouse at an asset in the bottom row to see all corresponding liabilities highlighted</em> (because every financial asset is somebody else's liability), <em>and vica versa</em>.</li>
-                <li><em>Point the mouse at an aggregate statistic (the orange money and debt bars) to see what it is composed of</em>.</li>
-                <li><em>Choose an operation in the menu below the balance sheets, and click 'Run Op'</em> to see the balance sheet transition animated.
-                    To watch again, click 'Replay Op'.
-                    Alternatively, you can click 'Reverse Op' to run the operation backwards, then click 'Run Op' again.</li>
-                <li><em>Point the mouse at the name below a balance sheet to see a floating copy of how it looked before the last operation</em>, so as to more easily see what changed.</li>
-                <li>You can edit the <i>operation size</i>.</li>
-                <li>The 'Reset Diagram' button restores the default set of sample values to all the balance sheets. These are made up numbers for simple illustration, not real economic data.</li>
-                <li>The assets and liabilities with a yellow border <i>during animation</i> of an operation are those being directly modified by the operation.</li>
-                <li>This page shows <b>only <i>financial</i> assets and liabilities</b>. Tangible assets (machinery, real estate, etc) are an important part of real world balance sheets also, but are not affected in the same way by the various financial operations shown here.</li>
-                <li>Excluded for simplicity: state and local governments, the foreign sector, and non-profits.</li>
+                <li>La différence entre les actifs et les passifs désigne les capitaux propres des bilans, également appelés <i>actif financiers nets</i>.  Ce visualiseur affiche les fonds propres négatifs sur le côté gauche des bilans dans un style similaire à celui de <a href ="http://www.calculatedriskblog.com/2009/04/bank-balance-sheet-liquidity-and.html">Exemple de risque calculé</a> et <a href="http://www.calculatedriskblog.com/2009/04/bank-balance-sheet-liquidity-and_26.html">deuxième partie</a>.</li>
+                <li>La ligne inférieure des bilans représente des secteurs entiers</b> (par exemple, tous les ménages combinés dans un seul bilan).</li>
+                <li>La ligne <b>moyenne des bilans est la somme en temps réel des bilans inférieurs</b>. Les deux agrégats sont "gouvernement fédéral" et "secteur privé" (en ignorant le secteur étranger, pour des raisons de simplicité, bien qu'il puisse être considéré comme faisant partie de l'agrégat "secteur privé").</li>
+                <li>La ligne supérieure des bilans <b> additionne tout ce qui se trouve en dessous, c'est-à-dire l'ensemble de l'économie</b>, et s'équilibre à zéro fonds propres par définition.</li>
+                <li><em> Pointez la souris sur un actif dans la ligne inférieure pour voir tous les passifs correspondants mis en évidence</em> (car chaque actif financier est le passif de quelqu'un d'autre), <em>et vica versa</em>.</li>
+                <li><em> Pointez la souris sur une statistique agrégée (les barres orange de l'argent et de la dette) pour voir de quoi elle est composée</em>.</li>
+                <li><em>Choisissez une opération dans le menu en dessous des bilans, et cliquez sur "Exécuter l'opération" pour voir la transition des bilans animée.
+                    Pour regarder à nouveau, cliquez sur "Replay Op".
+                    Vous pouvez également cliquer sur "Reverse Op" pour exécuter l'opération à l'envers, puis cliquer à nouveau sur "Run Op".</li>
+                <li><em> Pointer la souris sur le nom sous un bilan pour voir une copie flottante de ce à quoi il ressemblait avant la dernière opération</em>, afin de voir plus facilement ce qui a changé.</li>
+                <li>Vous pouvez modifier la taille de l'opération <i>.</li>
+                <li>Le bouton "Réinitialiser le diagramme" rétablit l'ensemble des valeurs par défaut de l'échantillon pour tous les bilans. Il s'agit de chiffres pour une simple illustration, et non pas de données économiques réelles.</li>
+                <li>Les actifs et passifs avec une bordure jaune <i>durant l'animation</i> d'une opération sont ceux qui sont directement modifiés par l'opération.</li>
+                <li>Cette page montre <b>seulement <i>financier</i> actif et passif</b>. Les actifs corporels (machines, biens immobiliers, etc.) constituent également une partie importante des bilans du monde réel, mais ne sont pas affectés de la même manière par les différentes opérations financières présentées ici.</li>
+                <li>Exclus pour des raisons de simplicité : les administrations locaux, le secteur étranger et les organisations à but non lucratif.</li>
             </ul>
         </div>
         <p><span class="sectionHeading">Interactive Economy-Wide Financial Balance Sheet Diagram:</span>
