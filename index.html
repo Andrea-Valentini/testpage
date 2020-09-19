@@ -47,7 +47,6 @@
             #wizardTable td, #wizardTable th {/*border: 1px solid black*/}
             #wizardTable th {text-align: left; background-color: lightblue;}
             #wizardDoneDonate {display: none}
-
             #disqusCommentsLinkSpan {padding-left:50px;font-size:smaller}
             #shareSpan {position:absolute;padding-left:50px;float:right;width:200px;font-size:smaller}
             #alsoTrySpan {float:right;font-size:smaller}
@@ -94,39 +93,39 @@
         <!--div style="color:red;font-weight:bold;background-color:yellow;">If you have issues with this page on Internet Explorer 9, please try a different browser.</div-->
         <![endif]-->
         <p><span class="sectionHeading">Please Note:</span>
-            <span id="notesDivEnabler"><span class="teaserText">The goal of this tool...</span>
-                (<span class="actionableText" onclick="setVisibilityNotes(true);">click to expand</span>)</span>
+            <span id="notesDivEnabler"><span class="teaserText">L'objectif de cet outil...</span>
+                (<span class="actionableText" onclick="setVisibilityNotes(true);">Montrer</span>)</span>
             <span id="notesDivDisabler" style="display:none">
-                (<span class="actionableText" onclick="setVisibilityNotes(false);">click to hide</span>)</span>
+                (<span class="actionableText" onclick="setVisibilityNotes(false);">Cacher</span>)</span>
         </p>
         <div id="notesDiv">
             <ul>
                 <li>L'objectif de cet outil est de fournir une aide à la visualisation et à la compréhension des concepts importants en macroéconomie.</b></span>.
                     Il presente des points clé de la MMT </li>
-                <li>Pour en savoir plus sur la théorie économique, veuillez consulter les blogs des auteurs  MMT tels que economist <a href="http://bilbo.economicoutlook.net/blog/?cat=11">Bill Mitchell</a> ou <a href="http://moslereconomics.com/">Warren Mosler</a>. Le livre de Mosler, <a href="http://moslereconomics.com/2009/12/10/7-deadly-innocent-frauds/">Seven Deadly Innocent Frauds of Economic Policy</a>est une introduction plus brève, destinée à un plus grand public.
-                    Une version en plusieurs parties de <a href="http://neweconomicperspectives.blogspot.com/p/modern-money-primer.html">Modern Money Primer</a> est disponible sur le site des Nouvelles perspectives économiques.
-                    Voici également des documents de la Réserve fédérale américaine et d'autres sources " fiables ".  (comme par exemple <a href="http://www.bis.org/publ/work292.htm">ce docuòent de la BIS</a>) qui soutiennent cette compréhension moderne des prêts bancaires, des réserves et des concepts connexes.</li>
-                <li>I will gradually add new features and operations and work to improve the existing content.</li>
+                <li>Pour en savoir plus sur la théorie économique, veuillez consulter les blogs des auteurs  MMT  <a href="http://bilbo.economicoutlook.net/blog/?cat=11">Bill Mitchell</a> ou <a href="http://moslereconomics.com/">Warren Mosler</a>. Le livre de Mosler, <a href="http://moslereconomics.com/2009/12/10/7-deadly-innocent-frauds/">Seven Deadly Innocent Frauds of Economic Policy</a>est une introduction plus brève, destinée à un plus grand public.
+                    Une version en plusieurs parties de <a href="http://neweconomicperspectives.blogspot.com/p/modern-money-primer.html">Modern Money Primer</a> est disponible sur le site "New Economic Pserspectives".
+                    Voici également des documents de la FED et d'autres sources "fiables".  (comme par exemple <a href="http://www.bis.org/publ/work292.htm">ce docuòent de la BIS</a>) qui soutiennent cette compréhension moderne des prêts bancaires, des réserves et des concepts connexes.</li>
+                
                 <!--<li>Please post corrections and constructive feedback to the comments section of this <a href="http://www.thoughtofferings.com/2010/02/macroeconomic-balance-sheet-visualizer.html">placeholder blog post</a>, or email me at hbl{{at}}econviz[[dot]]org.</li-->
             </ul>
         </div>
         <p><span class="sectionHeading">Comment comprendre et utiliser cet outil:</span>
             <span id="tipsDivEnabler"><span class="teaserText">La différence entre les...</span>
-                (<span class="actionableText" onclick="setVisibilityTips(true);">click to expand</span>)</span>
+                (<span class="actionableText" onclick="setVisibilityTips(true);">Montrer</span>)</span>
             <span id="tipsDivDisabler" style="display:none">
-                (<span class="actionableText" onclick="setVisibilityTips(false);">click to hide</span>)</span>
+                (<span class="actionableText" onclick="setVisibilityTips(false);">Cacher</span>)</span>
         </p>
         <div id="tipsDiv">
             <ul>
-                <li>La différence entre les actifs et les passifs désigne les capitaux propres des bilans, également appelés <i>actif financiers nets</i>.  Ce visualiseur affiche les fonds propres négatifs sur le côté gauche des bilans dans un style similaire à celui de <a href ="http://www.calculatedriskblog.com/2009/04/bank-balance-sheet-liquidity-and.html">Exemple de risque calculé</a> et <a href="http://www.calculatedriskblog.com/2009/04/bank-balance-sheet-liquidity-and_26.html">deuxième partie</a>.</li>
+                <li>La différence entre les actifs et les passifs désigne les AFNs des bilans, également appelés <i>Actif Financiers Nsets</i>.  Ce visualiseur affiche les AFNs négatifs sur le côté gauche des bilans dans un style similaire à celui de <a href ="http://www.calculatedriskblog.com/2009/04/bank-balance-sheet-liquidity-and.html">Calculated risk</a> et <a href="http://www.calculatedriskblog.com/2009/04/bank-balance-sheet-liquidity-and_26.html"></a>.</li>
                 <li>La ligne inférieure des bilans représente des secteurs entiers</b> (par exemple, tous les ménages combinés dans un seul bilan).</li>
-                <li>La ligne <b>moyenne des bilans est la somme en temps réel des bilans inférieurs</b>. Les deux agrégats sont "gouvernement fédéral" et "secteur privé" (en ignorant le secteur étranger, pour des raisons de simplicité, bien qu'il puisse être considéré comme faisant partie de l'agrégat "secteur privé").</li>
-                <li>La ligne supérieure des bilans <b> additionne tout ce qui se trouve en dessous, c'est-à-dire l'ensemble de l'économie</b>, et s'équilibre à zéro fonds propres par définition.</li>
-                <li><em> Pointez </em> la souris sur un actif dans la ligne inférieure pour voir tous les passifs correspondants mis en évidence</em> (car chaque actif financier est le passif de quelqu'un d'autre), <em>et vica versa</em>.</li>
+                <li>La ligne <b>moyenne des bilans est la somme en temps réel des bilans inférieurs</b>. Les deux agrégats sont le "secteur public" et le "secteur privé" (en ignorant le secteur étranger, pour des raisons de simplicité, bien qu'il puisse être considéré comme faisant partie de l'agrégat "secteur privé").</li>
+                <li>La ligne supérieure des bilans <b> additionne tout ce qui se trouve en dessous, c'est-à-dire l'ensemble de l'économie,</b> et s'équilibre à zéro AFNs par définition.</li>
+                <li><em> Pointez </em> la souris sur un actif dans la ligne inférieure pour voir tous les passifs correspondants mis en évidence</em> (car chaque actif financier est le passif de quelqu'un d'autre), <em>et vice versa</em>.</li>
                 <li><em> Pointez </em>la souris sur une statistique agrégée (les barres orange de l'argent et de la dette) pour voir de quoi elle est composée</em>.</li>
                 <li><em>Choisissez </em> une opération dans le menu en dessous des bilans, et cliquez sur "Exécuter l'opération" pour voir la transition des bilans animée.
-                    Pour regarder à nouveau, cliquez sur "Replay Op".
-                    Vous pouvez également cliquer sur "Reverse Op" pour exécuter l'opération à l'envers, puis cliquer à nouveau sur "Run Op".</li>
+                    Pour regarder à nouveau, cliquez sur "Reproduction de l'opération".
+                    Vous pouvez également cliquer sur "Exécuter l'opération inverse" pour exécuter l'opération à l'envers, puis cliquer à nouveau sur "Run Op".</li>
                 <li><em> Pointer </em> la souris sur le nom sous un bilan pour voir une copie flottante de ce à quoi il ressemblait avant la dernière opération</em>, afin de voir plus facilement ce qui a changé.</li>
                 <li>Vous pouvez modifier la taille de l'opération <i>.</li>
                 <li>Le bouton "Réinitialiser le diagramme" rétablit l'ensemble des valeurs par défaut de l'échantillon pour tous les bilans. Il s'agit de chiffres pour une simple illustration, et non pas de données économiques réelles.</li>
@@ -135,34 +134,34 @@
                 <li>Exclus pour des raisons de simplicité : les administrations locaux, le secteur étranger et les organisations à but non lucratif.</li>
             </ul>
         </div>
-        <p><span class="sectionHeading">Interactive Economy-Wide Financial Balance Sheet Diagram:</span>
-            <button id="wizardToggleButton" onclick="toggleWizardMode()">Turn ON Step-by-Step Walkthrough</button>
+        <p><span class="sectionHeading">Diagramme interactif du bilan financier à l'échelle macroéconomique:</span>
+            <button id="wizardToggleButton" onclick="toggleWizardMode()">Activer la découverte étape par étape</button>
         </p>
-                <svg width="1000" height="586"
+                <svg width="1200" height="586"
             style="background-color: #FFFFFF; display: block; margin-bottom: 5px;"
             id="embeddedSVG">
                 
                 </svg>
 
         <div id="wizardArea">
-            <span class="sectionHeading">Step-by-Step Walkthrough is Active:</span> <span id="wizardTotalSteps"></span><br/>
+            <span class="sectionHeading">la découverte étape par étape est active:</span> <span id="wizardTotalSteps"></span><br/>
             <table id="wizardTable">
                 <tr>
-                    <th>Step #</th><th>Action</th><th>Operation</th><th>Comments</th>
+                    <th>Etape #</th><th>Action</th><th>Opération</th><th>Commentaire</th>
                 </tr>
                 <tr>
-                    <td><span id="wizardPrevStepNum"></span> (Prior)</td>
-                    <td><button id="wizardPrevButton" onclick="BalanceSheetWizard_stepPrev()">Back To This --></button></td>
+                    <td><span id="wizardPrevStepNum"></span> ()</td>
+                    <td><button id="wizardPrevButton" onclick="BalanceSheetWizard_stepPrev()">Etape precedente --></button></td>
                     <td><span id="wizardPrevStepOp"></span></td>
                     <td><span id="wizardPrevStepComments"></span></td>
                 </tr><tr id="activeWizardRow">
-                    <td><span id="wizardCurrStepNum"></span> (Current)</td>
-                    <td><button id="wizardReplayButton" onclick="BalanceSheetWizard_stepReplay()">Replay This --></button></td>
+                    <td><span id="wizardCurrStepNum"></span> ()</td>
+                    <td><button id="wizardReplayButton" onclick="BalanceSheetWizard_stepReplay()">Reproduire cette etape--></button></td>
                     <td><span id="wizardCurrStepOp"></span></td>
                     <td><span id="wizardCurrStepComments"></span></td>
                 </tr><tr>
-                    <td><span id="wizardNextStepNum"></span> (Next)</td>
-                    <td><button id="wizardNextButton" onclick="BalanceSheetWizard_stepNext()">Run This --></button></td>
+                    <td><span id="wizardNextStepNum"></span> ()</td>
+                    <td><button id="wizardNextButton" onclick="BalanceSheetWizard_stepNext()">Etape suivante --></button></td>
                     <td><span id="wizardNextStepOp"></span></td>
                     <td><span id="wizardNextStepComments"></span><span id="wizardDoneDonate">
                             <!--<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" style="margin: 0em;">
@@ -177,40 +176,40 @@
             </table>
         </div>
         <div id="controlArea">
-            <span class="controlLabel">Choose Operation:</span> <select id="opSelect" onChange="selectionChangedClick(this)">
-                <option value="privatespending" selected>Private Spending</option>
-                <option value="governmentspending">Government Spends</option>
-                <option value="governmenttaxes">Government Taxes</option>
-                <option value="governmentdebtissuance">Government Issues Debt</option>
-                <option value="consolidatedgovernmentspending">Government Spends (Consolidated)</option>
-                <option value="governmentspendingnobonds">Government Spends (Without Borrowing)</option>
-                <option value="withdrawcurrency">Bank Customer Withdraws Currency</option>
-                <option value="depositcurrency">Bank Customer Deposits Currency</option>
-                <option value="bankloan">Bank Loan</option>
-                <option value="bankloaninterest">Borrower Pays Interest on Bank Loan</option>
-                <option value="bankloanrepayment">Borrower Repays Principal from Bank Loan</option>
-                <option value="bankloandefault">Borrower Defaults on Bank Loan</option>
-                <option value="bondissuance">Private Bond Issued</option>
-                <option value="bondinterest">Private Bond Interest Paid</option>
-                <option value="bondrepayment">Private Bond Principal Repaid</option>
-                <option value="bonddefault">Private Bond Defaulted On</option>
-                <option value="bankloansecuritize">Bank Loan is Securitized</option>
-                <option value="qe">Quantitative Easing (Variation 1 - Households Sell)</option>
-                <option value="qebanks">Quantitative Easing (Variation 2 - Banks Sell)</option>
-                <option value="omoraiserates">Open Market Ops: Raise Rates Toward Target</option>
-                <option value="omolowerrates">Open Market Ops: Lower Rates Toward Target</option>
-                <option value="governmentdebtissuancettl">Government Issues Debt (Banks Buy via TT&L)</option>
-                <option value="treasurymovesttl">Treasury Moves Funds from Bank TT&L to Central Bank</option>
+            <span class="controlLabel">Choisissez l'opération:</span> <select id="opSelect" onChange="selectionChangedClick(this)">
+                <option value="privatespending" selected>Dépense privée</option>
+                <option value="governmentspending">Dépense du gouvernement</option>
+                <option value="governmenttaxes">Impôts du gouvernement</option>
+                <option value="governmentdebtissuance">Le gouvernement émet des titres</option>
+                <option value="consolidatedgovernmentspending">Dépense du gouvernement (consolidée)</option>
+                <option value="governmentspendingnobonds">Dépenses publiques (sans emettre des titres d'état)</option>
+                <option value="withdrawcurrency">Un client de la banque retire des billets</option>
+                <option value="depositcurrency">Un client de la banque dépose des billets</option>
+                <option value="bankloan">Prêt bancaire</option>
+                <option value="bankloaninterest">L'emprunteur paie des intérêts sur le prêt bancaire</option>
+                <option value="bankloanrepayment">L'emprunteur rembourse le principal du prêt bancaire</option>
+                <option value="bankloandefault">Défaut de l'emprunteur sur un prêt bancaire</option>
+                <option value="bondissuance">Émission d'obligations privées</option>
+                <option value="bondinterest">Intérêts payés sur les obligations privées</option>
+                <option value="bondrepayment">Remboursement du capital des obligations privées</option>
+                <option value="bonddefault">Défaut de paiement d'une obligation privée</option>
+                <option value="bankloansecuritize">Le prêt bancaire est titrisé</option>
+                <option value="qe">Assouplissement quantitatif (Variation 1 - Vente aux ménages)</option>
+                <option value="qebanks">Assouplissement quantitatif (Variation 2 - Vente aux banques)</option>
+                <option value="omoraiserates">Opérations de marché ouvert : augmentation du taux </option>
+                <option value="omolowerrates">Opérations de marché ouvert : diminution du taux</option>
+                <option value="governmentdebtissuancettl">Dette des émissions publiques (les banques achètent via TT&L)</option>
+                <option value="treasurymovesttl">Le Trésor transfère des fonds de la Banque TT&L à la Banque centrale</option>
             </select>
-            <span class="controlLabel">Size:</span> <input type="text" id="opAmountText" value="30" size="5"/>
-            <button onclick="doActionClick()">Run Op</button>
+            <span class="controlLabel">Montant:</span> <input type="text" id="opAmountText" value="30" size="5"/>
+            <button onclick="doActionClick()">Exécuter l'opération</button>
             <button onclick="replayActionClick()" id="replayOpButton" disabled="disabled">Replay Op</button>
-            <button onclick="reverseActionClick()">Reverse Op</button>
-            <button onclick="resetBalanceSheetsClick()">Reset Diagram</button>
-            <div id="errorLabel" class="errorLabel"><b>Invalid Operation</b>: One or more balance sheets has insufficient assets or liabilities. Try another operation first or reset the balance sheets.</div>
+            <button onclick="reverseActionClick()">Exécuter l'opération inverse</button>
+            <button onclick="resetBalanceSheetsClick()">Réinitialiser le diagramme</button>
+            <div id="errorLabel" class="errorLabel"><b>Opération non valable</b>: Un ou plusieurs bilans présentent un actif ou un passif insuffisant. Essayez d'abord une autre opération ou réinitialisez les bilans.</div>
         </div>
         <div id="explanationArea">
-            <span class="sectionHeading">Explanation of selected operation<span id="opDetailsOpName"></span>:</span>
+            <span class="sectionHeading">Explication de l'opération sélectionnée<span id="opDetailsOpName"></span>:</span>
             <!--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <span class="deemphasizedLabel">[<a href="./" id="oplink">Direct link</a> to this operation]</span>-->
             <br/>
@@ -232,275 +231,275 @@
                 </ul><ul>
                     <li>Pour la plupart des pays, pendant la plupart des périodes, le secteur privé national souhaite globalement épargner (c'est-à-dire dépenser moins qu'il ne gagne).
                         Le gouvernement permet d'atteindre cet objectif en enregistrant des déficits (c'est-à-dire en dépensant plus qu'il ne perçoit d'impôts).
-                        <b>The effect is that government makes its own financial balance sheet equity more negative in order to increase the balance sheet equity (wealth) of the private sector.</b></li>
-                    <li>The treasury spends by reducing its deposit account balance (held at the central bank) and increasing the reserve balance at the bank where the recipient of the spending has an account.
-                        The recipient's (in this case, household's) bank deposits rise to match.</li>
-                    <li><b>As emphasized by Modern Monetary Theory, there is no theoretical limit to this spending for a government that issues its own non-convertible currency.</b>
-                        To see this, run the <i>"Government Issues Debt"</i> operation next, and then you can repeat <i>"Government Spends"</i> once again.
-                        To aid in visualizing the result, the <i>"Government Spends (Consolidated)"</i> operation combines these other two operations into one.
-                        Another approach available to the government is shown in the <i>"Government Spends (Without Borrowing)"</i> combined operation.
-                    <li>In this example, the banking sector expands its assets and liabilities (due to increased deposits), but its equity is unchanged.</li>
-                    <li>Government spending generates income for the private sector, and contributes to Gross Domestic Product.</li>
+                        <b>L'effet est que le gouvernement rend son propre bilan financier plus négatif afin d'augmenter les AFN du secteur privé.</b></li>
+                    <li>Le Trésor dépense en réduisant le solde de son compte de dépôt (détenu à la banque centrale) et en augmentant le solde de réserve à la banque où le bénéficiaire des dépenses a un compte.
+                        Les dépôts bancaires du bénéficiaire (dans ce cas, le ménage) augmentent pour atteindre le même montant.
+                    <li><b>Comme le montre la théorie monétaire moderne, il n'y a pas de limite théorique à ces dépenses pour un gouvernement qui émet sa propre monnaie non convertible.</b>
+                        Pour voir cela, lancez ensuite l'opération <i> "Émissions de la dette publique"</i>, puis vous pouvez répéter <i> "Dépenses publiques"</i> une fois de plus.
+                        Pour vous aider à visualiser le résultat, l'opération <i>"Dépenses publiques (consolidées)"</i> combine ces deux autres opérations en une seule.
+                        L'opération combinée </i> "Dépenses publiques (sans emprunt)"</i> présente une autre approche à la disposition du gouvernement.
+                    <li>Dans cet exemple, le secteur bancaire augmente son actif et son passif (en raison de l'augmentation des dépôts), mais ses AFN restent inchangés.</li>
+                    <li>Les dépenses publiques génèrent des revenus pour le secteur privé et contribuent au produit intérieur brut.</li>
                 </ul>
             </div>
             <div id="governmenttaxes" style="display:none">
                 <ul>
-                    <li>In this example, the federal government (via the treasury) collects taxes from the household sector.</li>
+                    <li>Dans cet exemple, le gouvernement fédéral (via le Trésor public) perçoit des impôts auprès du secteur des ménages.</li>
                 </ul><ul>
-                    <li>Though most taxes are levied on income flows rather than on existing stocks of savings, taxation reduces the private sector's balance sheet equity (wealth) and ultimately its spending power.
-                        <b>A government that controls its own non-convertible currency does NOT tax to "save up" in order to enable future spending, because such a government is never revenue-constrained</b> &mdash; see the <i>"Government Spends (Consolidated)"</i> and <i>"Government Spends (Without Borrowing)"</i> operations.
-                        The main role of taxation is to limit aggregate demand (government plus private sector) so demand does not exceed the economy's productive capacity and cause inflation to accelerate.</li>
-                    <li>The aggregate balance sheet impact of taxation is the opposite of that of government spending.</li>
-                    <li>Tax payments by households reduce their bank deposits.</li>
-                    <li>Banking sector assets and liabilities shrink as a result of reduced deposits, but bank equity is unchanged.</li>
+                    <li>Bien que la plupart des impôts soient prélevés sur les flux de revenus plutôt que sur les stocks d'épargne existants, l'imposition réduit les fonds propres (richesse) du bilan du secteur privé et, en fin de compte, son pouvoir de dépense.
+                        <b>Un gouvernement qui contrôle sa propre monnaie non convertible ne prélève pas d'impôts pour "épargner" afin de permettre des dépenses futures, car un tel gouvernement n'est jamais soumis à des contraintes de revenus</b> &mdash ; voir les opérations <i>"Dépenses publiques (consolidées)"</i> et <i>"Dépenses publiques (sans emprunt)"</i>.
+                        Le rôle principal de la fiscalité est de limiter la demande globale (gouvernement plus secteur privé) afin que la demande ne dépasse pas la capacité de production de l'économie et ne provoque pas une accélération de l'inflation.</li>
+                    <li>L'impact global de la fiscalité sur le bilan est l'inverse de celui des dépenses publiques.</li>
+                    <li>Les paiements d'impôts des ménages réduisent leurs dépôts bancaires.</li>
+                    <li>Les actifs et les passifs du secteur bancaire diminuent en raison de la réduction des dépôts, mais les AFN restent inchangés.</li>
                 </ul>
             </div>
             <div id="governmentdebtissuance" style="display:none">
                 <ul>
-                    <li>In this example, the government sells treasury securities (bonds, bills, and notes) to the household sector.</li>
-                    <li>An alternate scenario in which the government sells debt to commercial banks via TT&L accounts is available later in the menu of operations.</li>
+                    <li>Dans cet exemple, le gouvernement vend des titres du Trésor (obligations, bons et billets) au secteur des ménages.</li>
+                    <li> Un autre scénario dans lequel le gouvernement vend des dettes à des banques commerciales via des comptes TT&L est disponible plus loin dans le menu des opérations.</li>
                 </ul><ul>
-                    <li>The impact on household balance sheets is best summarized as an asset swap &mdash; households give up bank deposits in exchange for treasuries.
-                        Treasuries typically have a higher yield than bank deposits, and due to the positive net savings rate desired by the private sector, there are always willing buyers of treasuries.</li>
-                    <li><b>This operation shows how the Treasury typically expands its balance sheet &mdash; its assets expand with added central bank liabilities (extracted from the private sector) and its liabilities expand with new treasury debt (with the private sector holding the corresponding asset, treasury securities).</b></li>
+                    <li>L'impact sur les bilans des ménages se résume à un échange d'actifs et de liquidités ; les ménages renoncent aux dépôts bancaires en échange de bons du Trésor.
+                        Les bons du Trésor ont généralement un rendement plus élevé que les dépôts bancaires, et en raison du taux d'épargne net positif souhaité par le secteur privé, il y a toujours des acheteurs de bons du Trésor disposés à le faire. </li>
+                    <li><b>Cette opération montre comment le Trésor public accroît généralement son bilan et sa trésorerie ; ses actifs augmentent avec l'ajout de passifs de la banque centrale (provenant du secteur privé) et ses passifs augmentent avec de nouvelles dettes du Trésor public (le secteur privé détenant l'actif correspondant, les titres du Trésor).</b></li>
                 </ul>
             </div>
             <div id="consolidatedgovernmentspending" style="display:none">
                 <ul>
-                    <li>This operation combines two others: <i>"Government Spends"</i> and <i>"Government Issues Debt"</i>. Try them in turn and then try this to see that it has the same net effect.</li>
-                    <li>This example shows the government spending money on the household sector, but mechanics would be comparable with government spending on the corporate sector.</li>
+                    <li>Cette opération en combine deux autres : <i> "Dépenses du gouvernement"</i> et <i> "Émissions de la dette du gouvernement"</i>. Essayez-les l'une après l'autre, puis essayez ceci pour voir que cela a le même effet net.</li>
+                    <li> Cet exemple montre que le gouvernement dépense de l'argent dans le secteur des ménages, mais la mécanique serait comparable aux dépenses du gouvernement dans le secteur des entreprises.</li>
                 </ul><ul>
-                    <li><b>The effect of this combined operation is that the treasury generates income and wealth for the private sector by increasing the private sector's assets (treasuries) and thus also its balance sheet equity.</b>
-                        The private sector on aggregate generally desires to net save (spend less than it earns), a process that is facilitated by government deficits.</li>
-                    <li>This visualization of aggregate sector-wide balance sheets obscures some of the details within each sector.
-                        For example, <b>it might not be the household initially paid by the government who buys the treasuries &mdash; instead the first household might spend on other private sector goods and services and it would be the recipients of the secondary spending (and beyond, as the spending propagates through the economy) who ultimately buy the treasuries.</b></li>
-                    <li>One objection might be that the treasury could fail to sell the bonds and thus be unable to replenish its own assets (deposits), but the reality is that these <b>treasury auctions never fail for a sovereign nation that issues its own non-convertible currency (like the US) because the market knows that the government (treasury and central bank together) never have any possibility of default other than for purely political reasons.</b>
-                        Even in the European Monetary Union (whose member countries do not control their own currencies and are somewhat analagous to US States), the European Central Bank has since mid 2010 been buying sovereign bonds of Greece and other countries in the secondary market, a process limited only by politics.</li>
-                    <li>Note that this combined operation doesn't even involve the Central Bank!
-                        The Central Bank's role is simply to transform the "right" number of treasuries into reserves and currency to set interest rates and to provide a transaction-friendly money supply (currency and reserves).
-                        The Central Bank's operations just remove one type of financial asset from the non-government sector and give it another kind of financial asset in exchange.</li>
+                    <li><b>L'effet de cette opération combinée est que le trésor génère des revenus et des richesses pour le secteur privé en augmentant les actifs du secteur privé (les trésors) et donc aussi ses fonds propres au bilan.</b>
+                        Le secteur privé dans son ensemble souhaite généralement réaliser une épargne nette (dépenser moins qu'il ne gagne), un processus qui est facilité par les déficits publics.</li>
+                    <li>Cette visualisation des bilans sectoriels agrégés masque certains détails au sein de chaque secteur.
+                        Par exemple, <b>il se peut que ce ne soit pas le ménage initialement payé par le gouvernement qui achète les bons du Trésor &mdash ; au lieu de cela, le premier ménage pourrait dépenser sur d'autres biens et services du secteur privé et ce seraient les bénéficiaires des dépenses secondaires (et au-delà, à mesure que les dépenses se propagent dans l'économie) qui achètent finalement les bons du Trésor.</b></li>
+                    <li>Une objection pourrait être que le Trésor pourrait ne pas vendre les obligations et donc être incapable de reconstituer ses propres actifs (dépôts), mais la réalité est que ces <b> adjudications du Trésor n'échouent jamais pour une nation souveraine qui émet sa propre monnaie non convertible (comme les États-Unis) parce que le marché sait que le gouvernement (Trésor et banque centrale ensemble) n'a jamais aucune possibilité de défaillance autre que pour des raisons purement politiques.</b>
+                        Même au sein de l'Union monétaire européenne (dont les pays membres ne contrôlent pas leur propre monnaie et sont quelque peu analphabètes par rapport aux États américains), la Banque centrale européenne achète depuis la mi-2010 des obligations souveraines de la Grèce et d'autres pays sur le marché secondaire, un processus limité uniquement par la politique.
+                    <li>Notez que cette opération combinée n'implique même pas la Banque centrale !
+                        Le rôle de la Banque centrale est simplement de transformer le "bon" nombre de bons du Trésor en réserves et en monnaie pour fixer les taux d'intérêt et fournir une masse monétaire (monnaie et réserves) qui facilite les transactions.
+                        Les opérations de la Banque centrale ne font que retirer un type d'actif financier au secteur non gouvernemental et lui donner un autre type d'actif financier en échange.</li>
                 </ul>
             </div>
             <div id="governmentspendingnobonds" style="display:none">
                 <ul>
-                    <li>This combined operation shows why <b>a sovereign government that issues its own non-convertible currency is never revenue constrained.</b>
-                        That is, the consolidated government (treasury plus central bank) can always spend if desired without taxing or issuing bonds either beforehand or afterwards.</li>
-                    <li>In this example the government spending flows to the household sector, but spending on the corporate sector would look comparable.</li>
+                    <li>Cette opération combinée montre pourquoi <b>un gouvernement souverain qui émet sa propre monnaie non convertible n'est jamais soumis à des contraintes de revenus.</b>
+                        En d'autres termes, le gouvernement consolidé (Trésor et banque centrale) peut toujours dépenser s'il le souhaite sans imposer ni émettre d'obligations, que ce soit avant ou après.
+                    <li>Dans cet exemple, les dépenses publiques sont destinées au secteur des ménages, mais les dépenses des entreprises seraient comparables.
                 </ul><ul>
-                    <li>Governments currently do not use this spending approach, but they could if desired.
-                        As it is, the private sector (including the foreign sector) is always happy to buy interest-bearing government debt (i.e., federal bond auctions never fail.)
-                        See the operation <i>"Government Spends (Consolidated)"</i>.</li>
-                    <li>In the US, gold standard era laws are still in place that prevent the central bank from buying debt directly from the treasury in the manner shown here.
-                        However, those same laws allow the central bank to buy treasury debt on the secondary market.
-                        The latter approach simply adds two extra steps to the process (the treasury sells debt to primary dealers who know the central bank stands ready to buy the debt from them immediately afterwards.)</li>
-                    <li>Some MMT authors have discussed alternate approaches that they consider may have policy benefits:
-                        <ul><li>While there is no operational necessity to doing so, some would combine the treasury and central bank (largely eliminating the central bank).
-                                As such there might be a single balance sheet with reserves (and possibly treasuries, if the government chose to issue debt) as liabilities.</li>
-                            <li>Alternatively, some MMT authors suggest that the treasury could run an "overdraft" at the central bank (i.e., the "treasury deposits" account balance would be negative) to facilitate deficit spending without any bond issuance.
-                                On the balance sheets, the negative balance might be recorded <i>as treasury liabilities</i> linked to corresponding central bank assets.</li>
+                    <li>Les gouvernements n'utilisent pas actuellement cette approche des dépenses, mais ils pourraient le faire s'ils le souhaitaient.
+                        En effet, le secteur privé (y compris le secteur étranger) est toujours heureux d'acheter des dettes publiques portant intérêt (c'est-à-dire que les adjudications d'obligations fédérales n'échouent jamais).
+                        Voir l'opération <i>"Dépenses publiques (consolidées)"</i>.</li>
+                    <li> Aux États-Unis, les lois de l'époque de l'étalon-or sont toujours en vigueur et empêchent la banque centrale d'acheter des dettes directement au Trésor public de la manière indiquée ici.
+                        Cependant, ces mêmes lois permettent à la banque centrale d'acheter des titres de créance du Trésor sur le marché secondaire.
+                        Cette dernière approche ajoute simplement deux étapes supplémentaires au processus (le Trésor vend la dette aux négociants principaux qui savent que la banque centrale est prête à leur acheter la dette immédiatement après.)</li>
+                    <li>Certains auteurs du MMT ont discuté des approches alternatives qui, selon eux, pourraient avoir des avantages politiques :
+                        <ul><li>Même si cela n'est pas nécessaire sur le plan opérationnel, certains combineraient le Trésor et la banque centrale (en éliminant en grande partie la banque centrale).
+                                Ainsi, il pourrait y avoir un bilan unique avec des réserves (et éventuellement des bons du Trésor, si le gouvernement choisit d'émettre des titres de créance) au passif.</li>
+                            <li>Autrement, certains auteurs du MMT suggèrent que le Trésor public pourrait faire un "découvert" à la banque centrale (c'est-à-dire que le solde du compte "dépôts du Trésor" serait négatif) pour faciliter les dépenses déficitaires sans aucune émission d'obligations.
+                                Sur les bilans, le solde négatif pourrait être enregistré <i> comme des passifs du Trésor </i> liés aux actifs correspondants de la banque centrale.</li>
                         </ul></li>
                 </ul>
             </div>
             <div id="withdrawcurrency" style="display:none">
                 <ul>
-                    <li>In this example, a household withdraws currency (notes and coins), perhaps for use in making cash payments.
-                        (Or perhaps to store under a mattress!)</li>
+                    <li>Dans cet exemple, un ménage retire de l'argent (billets et pièces), peut-être pour effectuer des paiements en espèces.
+                        (Ou peut-être pour les stocker sous un matelas !)</li>
                 </ul><ul>
-                    <li>Household bank deposits are replaced by currency on the asset side of the balance sheet.</li>
-                    <li>Bank balance sheets shrink as assets (currency) and liabilities (deposits) are reduced.</li>
-                    <li>If banks run low on currency, the central bank can exchange reserves and currency as needed (an operation not shown in this tool).</li>
+                    <li>Les dépôts bancaires des ménages sont remplacés par de la monnaie à l'actif du bilan.</li>
+                    <li>Les bilans des banques diminuent au fur et à mesure que les actifs (devises) et les passifs (dépôts) sont réduits.</li>
+                    <li>Si les banques sont à court de devises, la banque centrale peut échanger des réserves et des devises selon les besoins (une opération qui n'est pas présentée dans cet outil).</li>
                 </ul>
             </div>
             <div id="depositcurrency" style="display:none">
                 <ul>
-                    <li>In this example, a household deposits currency (notes and coins) to a bank deposit account.</li>
+                    <li>Dans cet exemple, un ménage dépose de l'argent (billets et pièces) sur un compte de dépôt bancaire.</li>
                 </ul><ul>
-                    <li>This is the opposite to <i>"Bank Customer Withdraws Currency"</i> &mdash; please see that operation.</li>
+                    <li>C'est le contraire de <i> "Le client de la banque retire des devises"</i> &mdash ; veuillez voir cette opération.</li>
                 </ul>
             </div>
             <div id="bankloan" style="display:none">
                 <ul>
-                    <li>In this example, a bank lends money to a household (but a loan could also be to a company.)</li>
+                    <li>Dans cet exemple, une banque prête de l'argent à un ménage (mais un prêt pourrait aussi être accordé à une entreprise.)</li>
                 </ul><ul>
-                    <li>Both bank and household balance sheets expand with new assets and liabilities, but neither's balance sheet equity changes.</li>
-                    <li>Both broad money supply and private sector debt are increased.</li>
-                    <li><b>Loans create deposits! Banks do not lend out reserves!</b></li>
-                    <li>Bank lending is not reserve-constrained because even in countries with reserve ratios, any reserves needed can be obtained <i>after</i> lending.
-                        <b>The primary constraint on lending is the ability of banks to find credit-worthy borrowers who want loans.</b>
-                        A secondary consideration is regulatory capital ratios (the amount of balance sheet equity required relative to risky assets such as loans).
-                        But capital ratio rules are not a constraint at the macroeconomic level because healthy banks can easily raise additional capital through the equity markets to support additional lending, and ongoing earnings also add to capital.
-                        Rather, capital ratios are intended to ensure large enough "shock absorbers" in the case of too many defaulting loans, since loan defaults reduce balance sheet equity.</li>
-                    <li>In some countries, banks still have reserve ratios (a required quantity of reserves relative to customer deposits), but these rules were only necessary under the gold standard. Reserve ratios are never a constraint on lending &mdash; banks lend first and find the necessary reserves afterward.</li>
-                    <li>The central bank ensures there are always enough reserves in the system to meet banks' liquidity needs (since reserves are used for inter-bank payments, for example to clear checks between banks). Banks can borrow reserves from each other or from the central bank (which acts as lender of last resort.)
-                        The central bank also conducts open market operations that continually provide the "right" level of reserves to the banking system while maintaining a specified target for the overnight interest rate (for interbank lending of reserves).</li>
-                    <li>See the <i>"Open Market Ops: Raise Rates Toward Target"</i> and <i>"Open Market Ops: Lower Rates Toward Target"</i> visualizer operations.
-                        If aggregate bank lending in the economy is expanding, reserves will become relatively more scarce, and the <i>"Open Market Ops: Lower Rates Toward Target"</i> operation shows the way reserves typically would expand during open market operations after aggregate lending expands.</li>
+                    <li>Les bilans des banques et des ménages se développent avec de nouveaux actifs et passifs, mais les fonds propres du bilan ne changent pas non plus.</li>
+                    <li>La masse monétaire au sens large et la dette du secteur privé sont toutes deux augmentées.</li>
+                    <li><b>Les prêts créent des dépôts ! Les banques ne prêtent pas de réserves ! </b></li>
+                    <li>Les prêts bancaires ne sont pas soumis à des contraintes de réserves car même dans les pays ayant des ratios de réserves, les réserves nécessaires peuvent être obtenues <i>après </i> prêts.
+                        <b>La principale contrainte sur les prêts est la capacité des banques à trouver des emprunteurs solvables qui souhaitent obtenir des prêts.</b>
+                        Les ratios de capital réglementaire (le montant des fonds propres requis au bilan par rapport aux actifs à risque tels que les prêts) constituent une considération secondaire.
+                        Mais les règles relatives aux ratios de fonds propres ne constituent pas une contrainte au niveau macroéconomique, car les banques saines peuvent facilement lever des capitaux supplémentaires sur les marchés des actions pour soutenir des prêts supplémentaires, et les bénéfices courants viennent également s'ajouter au capital.
+                        Les ratios de fonds propres sont plutôt destinés à assurer des "amortisseurs" suffisamment importants dans le cas d'un trop grand nombre de prêts défaillants, puisque les défauts de paiement des prêts réduisent les fonds propres du bilan.
+                    <li>Dans certains pays, les banques ont encore des ratios de réserves (une quantité de réserves obligatoires par rapport aux dépôts des clients), mais ces règles n'étaient nécessaires que dans le cadre de l'étalon-or. Les coefficients de réserves ne sont jamais une contrainte pour les prêts et les liquidités ; les banques prêtent d'abord et trouvent les réserves nécessaires ensuite.
+                    <li>La banque centrale veille à ce qu'il y ait toujours suffisamment de réserves dans le système pour répondre aux besoins de liquidités des banques (puisque les réserves sont utilisées pour les paiements interbancaires, par exemple pour compenser les chèques entre banques). Les banques peuvent emprunter des réserves entre elles ou à la banque centrale (qui agit en tant que prêteur en dernier ressort).
+                        La banque centrale mène également des opérations d'open market qui fournissent en permanence le "bon" niveau de réserves au système bancaire tout en maintenant un objectif précis pour le taux d'intérêt au jour le jour (pour les prêts interbancaires de réserves).</li>
+                    <li>Voir les opérations de visualisation <i> "Opérations d'open market : hausse des taux vers l'objectif"</i> et <i> "Opérations d'open market : baisse des taux vers l'objectif"</i>.
+                        Si l'ensemble des prêts bancaires dans l'économie est en expansion, les réserves deviendront relativement plus rares, et l'opération <i>"Open Market Ops : Lower Rates Toward Target"</i> montre la manière dont les réserves s'accroissent généralement lors des opérations d'open market après l'expansion de l'ensemble des prêts.</li>
                 </ul>
             </div>
             <div id="bankloaninterest" style="display:none">
                 <ul>
-                    <li>In this example, a household pays loan interest to the bank that made the loan.</li>
+                    <li>Dans cet exemple, un ménage paie les intérêts du prêt à la banque qui a accordé le prêt. </li>
                 </ul><ul>
-                    <li>A loan interest payment results in a transfer of balance sheet equity from the borrower to the bank.
-                        (Much like occurs during private sector spending.)</li>
+                    <li>Le paiement des intérêts d'un prêt entraîne un transfert de fonds propres du bilan de l'emprunteur à la banque.
+                        (Tout comme cela se produit lors des dépenses du secteur privé.)</li>
                 </ul>
             </div>
             <div id="bankloanrepayment" style="display:none">
                 <ul>
-                    <li>In this example, a household repays some (or all) of the principal from a bank loan.</li>
+                    <li>Dans cet exemple, un ménage rembourse une partie (ou la totalité) du principal d'un prêt bancaire.</li>
                 </ul><ul>
-                    <li>The effect on balance sheets is the exact reverse of the loan origination &mdash; bank and household balance sheets both shrink, but balance sheet equity is unchanged.</li>
-                    <li>Both broad money supply and private sector debt are reduced by the amount of the repayment.</li>
+                    <li>L'effet sur les bilans est exactement l'inverse de celui de la création de prêts &mdash ; les bilans des banques et des ménages se réduisent tous les deux, mais les fonds propres du bilan restent inchangés.</li>
+                    <li>La masse monétaire au sens large et la dette du secteur privé sont toutes deux réduites du montant du remboursement.</li>
                 </ul>
             </div>
             <div id="bankloandefault" style="display:none">
                 <ul>
-                    <li>In this example, a household defaults on some (or all) of its bank loan.</li>
+                    <li>Dans cet exemple, un ménage est en défaut de paiement sur une partie (ou la totalité) de son prêt bancaire.</li>
                 </ul><ul>
-                    <li>During default, the individual household's liability (loan obligation) is reduced, as is the bank's corresponding asset (loan).
-                        Bank balance sheet equity is reduced, and household balance sheet equity increased.</li>
-                    <li>The use of an aggregate household balance sheet in the visualizer obscures some of the details occurring within the household sector.
-                        <b>When filing for bankruptcy, an individual household is likely to be insolvent (i.e., have negative balance sheet equity)</b> but when you add in all the other households with positive equity, the sector-wide "Households" balance sheet that you see here has positive equity.</li>
-                    <li>Even if the defaulting household started out with negative equity (liabilities exceeding assets), the default removes liabilities and thus increases the household's equity.</li>
-                    <li>A defaulting household likely would have spent the loan proceeds on goods and services in the broader economy before eventually needing to file for bankruptcy.
-                        From a macroeconomic balance sheet perspective, <b>the combination of a new bank loan and then a default on that loan is equivalent to the bank giving a "gift" of currency to the rest of the economy, which the recipients deposit back to an account at the bank.
-                            In other words, it is a transfer of balance sheet equity from the bank to others.</b>
-                        Banks suffering too many defaults can become insolvent (negative equity) or at least fall below regulatory minimums for capital, requiring bankruptcy, private capital infusion, government forbearance, or government bailout.</li>
-                    <li>Loan defaults reduce private debt but not broad money supply (since the deposits resulting from the original loan are still in circulation outside the bank, at a cost to the bank's balance sheet equity).</li>
+                    <li>En cas de défaillance, le passif du ménage individuel (obligation de prêt) est réduit, de même que l'actif correspondant de la banque (prêt).
+                        Les fonds propres du bilan de la banque sont réduits et ceux du ménage sont augmentés.
+                    <li>L'utilisation d'un bilan agrégé des ménages dans le visualiseur masque certains des détails qui se produisent dans le secteur des ménages.
+                        <li>Lorsqu'un ménage individuel dépose son bilan, il est probable qu'il soit insolvable (c'est-à-dire qu'il ait des fonds propres négatifs). Mais si l'on ajoute tous les autres ménages ayant des fonds propres positifs, le bilan sectoriel "Ménages" que vous voyez ici a des fonds propres positifs.</li>
+                    <li>Même si le ménage défaillant a commencé avec une équité négative (passif supérieur à l'actif), le défaut de paiement supprime le passif et augmente donc l'équité du ménage.</li>
+                    <li>Un ménage défaillant aurait probablement dépensé le produit du prêt en biens et services dans l'économie au sens large avant de devoir finalement déposer son bilan.
+                        Du point de vue du bilan macroéconomique, <b> la combinaison d'un nouveau prêt bancaire et d'un défaut de paiement sur ce prêt équivaut à un "don" de devises par la banque au reste de l'économie, que les bénéficiaires déposent sur un compte à la banque.
+                            En d'autres termes, il s'agit d'un transfert de fonds propres du bilan de la banque vers d'autres banques.</b>
+                        Les banques souffrant d'un trop grand nombre de défaillances peuvent devenir insolvables (fonds propres négatifs) ou au moins tomber en dessous des minimums réglementaires en matière de capital, ce qui nécessite la faillite, l'injection de capitaux privés, l'abstention de l'État ou le renflouement par l'État.</li>
+                    <li>Les défauts de paiement réduisent la dette privée mais pas la masse monétaire au sens large (puisque les dépôts résultant du prêt initial sont toujours en circulation à l'extérieur de la banque, ce qui a un coût sur les fonds propres du bilan de la banque).</li>
                 </ul>
             </div>
             <div id="bondissuance" style="display:none">
                 <ul>
-                    <li>In this example, a company issues a bond that is bought by a household.</li>
+                    <li>Dans cet exemple, une entreprise émet une obligation qui est achetée par un ménage.</li>
                 </ul><ul>
-                    <li>"Horizontal" borrowing of this sort (i.e., within the private sector) expands the balance sheet of the borrower with a new asset and liablity (and no change in balance sheet equity).</li>
-                    <li>The lender simply has one asset (deposits or currency) transformed into another asset (a bond).</li>
-                    <li>Non-bank borrowing increases private sector debt but not money supply.</li>
-                    <li>Too much horizontal borrowing can make an economy more vulnerable to crisis.
-                        The most severe manifestation of this is "debt deflation", first described by Irving Fisher in the context of the Great Depression.</li>
+                    <li> Les emprunts "horizontaux" de ce type (c'est-à-dire au sein du secteur privé) élargissent le bilan de l'emprunteur avec un nouvel actif et un nouveau passif (et aucune modification des capitaux propres du bilan).</li>
+                    <li>Le prêteur fait simplement transformer un actif (dépôts ou monnaie) en un autre actif (une obligation).</li>
+                    <li>Les emprunts non bancaires augmentent la dette du secteur privé mais pas la masse monétaire.</li>
+                    <li>Un emprunt trop horizontal peut rendre une économie plus vulnérable à la crise.
+                        La manifestation la plus grave de ce phénomène est la "déflation de la dette", décrite pour la première fois par Irving Fisher dans le contexte de la Grande Dépression.</li>
                 </ul>
             </div>
             <div id="bondinterest" style="display:none">
                 <ul>
-                    <li>In this example, a company pays interest on its bond to the lender (a household).</li>
+                    <li>Dans cet exemple, une entreprise paie des intérêts sur son obligation au prêteur (un ménage).</li>
                 </ul><ul>
-                    <li>As in the cases of bank loan interest payment and private spending, this operation transfers balance sheet equity from one entity to another.</li>
+                    <li>Comme dans le cas du paiement des intérêts d'un prêt bancaire et des dépenses privées, cette opération permet de transférer les fonds propres du bilan d'une entité à une autre.</li>
                 </ul>
             </div>
             <div id="bondrepayment" style="display:none">
                 <ul>
-                    <li>In this example, a company repays some or all of its bond obligation to a household.</li>
+                    <li>Dans cet exemple, une entreprise rembourse tout ou partie de son obligation obligataire à un ménage.</li>
                 </ul><ul>
-                    <li>The borrower's assets (bank deposits) and liabilities (bonds) are reduced but its balance sheet equity doesn't change.
-                        The lender's corresponding bond asset is transformed back to a deposit asset.</li>
-                    <li>Private sector debt is reduced but broad money supply is unchanged.</li>
+                    <li>L'actif (dépôts bancaires) et le passif (obligations) de l'emprunteur sont réduits mais les fonds propres du bilan ne changent pas.
+                        L'actif obligataire correspondant du prêteur est retransformé en un actif de dépôt.</li>
+                    <li>La dette du secteur privé est réduite, mais la masse monétaire au sens large reste inchangée.</li>
                 </ul>
             </div>
             <div id="bonddefault" style="display:none">
                 <ul>
-                    <li>In this example, a corporate borrower defaults on some or all of its bond at the expense of the household lender.</li>
+                    <li>Dans cet exemple, une société emprunteuse fait défaut sur une partie ou la totalité de son obligation aux frais du prêteur du ménage.</li>
                 </ul><ul>
-                    <li>Borrower liabilities (bonds) are reduced and lender assets (bonds) are similarly reduced.</li>
-                    <li>Bond issuance followed by default is roughly equivalent to a gift of balance sheet equity from the lender to the borrower.</li>
-                    <li>Private sector debt is reduced but broad money supply is unchanged.</li>
+                    <li>Les passifs des emprunteurs (obligations) sont réduits et les actifs des prêteurs (obligations) sont réduits de la même manière.</li>
+                    <li>L'émission d'obligations suivie d'un défaut de paiement équivaut à peu près à un don de fonds propres du bilan du prêteur à l'emprunteur.</li>
+                    <li>La dette du secteur privé est réduite, mais la masse monétaire au sens large reste inchangée.</li>
                 </ul>
             </div>
             <div id="bankloansecuritize" style="display:none">
                 <ul>
-                    <li>In this example, an existing bank loan is securitized and sold to a company that wishes to hold it as an investment.</li>
+                    <li>Dans cet exemple, un prêt bancaire existant est titrisé et vendu à une société qui souhaite le conserver comme investissement.</li>
                 </ul><ul>
-                    <li>The bank's loan asset moves to the asset side of the corporate balance sheet in the form of a securitized loan.
-                        The company's bank deposits are reduced, as are the corresponding deposit liabilities of the bank.
-                        Because this is an asset transfer and portfolio shift, neither party sees a change in balance sheet equity.</li>
-                    <li>Broad money supply is reduced but private sector debt is unchanged.</li>
-                    <li><b>From a purely balance sheet perspective, the combination of a new bank loan and then its securitization and sale to a non-bank is equivalent to a private sector bond offering</b>, and likewise results in debt increasing faster than money.</li>
-                    <li>Like other forms of private sector borrowing, a large volume of loan securitization has contributed to dramatic increases in private sector debt to GDP ratios in some economies, increasingly the economies' vulnerability to crisis.</li>
+                    <li> L'actif de la banque en matière de prêts passe à l'actif du bilan de l'entreprise sous la forme d'un prêt titrisé.
+                        Les dépôts bancaires de l'entreprise sont réduits, de même que les dettes correspondantes de la banque.
+                        Comme il s'agit d'un transfert d'actifs et d'un changement de portefeuille, aucune des parties ne voit de changement dans les capitaux propres du bilan.
+                    <li>La masse monétaire générale est réduite mais la dette du secteur privé reste inchangée.</li>
+                    <li><b>Du point de vue du bilan, la combinaison d'un nouveau prêt bancaire, puis de sa titrisation et de sa vente à une entité non bancaire équivaut à une offre d'obligations du secteur privé</b>, et entraîne de même une augmentation de la dette plus rapide que l'argent.</li>
+                    <li>Comme d'autres formes d'emprunt du secteur privé, un volume important de titrisation des prêts a contribué à l'augmentation spectaculaire des ratios dette/PIB du secteur privé dans certaines économies, rendant ces dernières de plus en plus vulnérables à la crise.</li>
                 </ul>
             </div>
             <div id="qe" style="display:none">
                 <ul>
-                    <li>Quantitative Easing (QE) involves the central bank buying treasuries (or in some cases private sector securities) from the private sector by paying with newly created reserves.</li>
-                    <li>This example shows <i>households</i> selling treasuries (via the primary dealers as intermediaries).
-                        However, any private sector entities can sell treasuries during QE, including the primary dealers themselves.</li>
+                    <li> L'assouplissement quantitatif (EQ) implique que la banque centrale achète des bons du Trésor (ou dans certains cas des titres du secteur privé) au secteur privé en payant avec les réserves nouvellement créées.</li>
+                    <li> Cet exemple montre <i>les ménages</i> vendant des bons du Trésor (via les primary dealers en tant qu'intermédiaires).
+                        Toutefois, toute entité du secteur privé peut vendre des bons du Trésor pendant l'EQ, y compris les négociants principaux eux-mêmes.
                 </ul><ul>
-                    <li><b>Quantitative easing simply swaps one type of asset on private sector balance sheets (typically treasuries) for another type (deposits backed by bank reserves, or simply bank reserves if a bank did the selling.)</b></li>
-                    <li>QE effectively changes the duration mix of outstanding government liabilities toward more short term liabilities and less long term ones.
-                        As such, it is roughly equivalent to if the treasury had previously chosen to issue relatively more T-Bills (short duration) and less bonds (long duration).</li>
-                    <li>No sectors (or entities within sectors) see any change in balance sheet equity as a direct result of QE.
-                        Therefore, <b>there is no meaningful increase in the private sector's purchasing power or propensity to spend</b>.
-                        At the level of each individual household or firm who might sell to the Fed during QE, <b>decisions regarding investment portfolio composition tend to be made independently from decisions about how much to spend versus hold in an investment portfolio</b> &mdash; so a change in the portfolio mix (cash, bonds, stocks, etc) won't cause more spending.
-                        Also, treasuries are almost as liquid as "money" and anyone previously holding treasuries could have easily sold them to support any planned spending.</li>
-                    <li>The central bank balance sheet expands as it draws in assets from the private sector and creates new liabilities (reserves) to match.</li>
-                    <li>Modern Monetary Theorists point out that from a macroeconomic perspective, <b>QE includes a deflationary impulse</b> because is it replaces a higher yielding asset (treasuries) with a lower yielding asset (money), reducing the interest income paid to the private sector by the government!
-                        As such it is comparable to the removal of some fiscal stimulus, though the extent to which aggregate demand is impacted in each case could differ depending on targeting (i.e., those earning treasury bond income may have a different propensity to spend from the initial recipients of fiscal stimulus related spending.)</li>
-                    <li>Broad money and base money both increase when households do the selling (however, when banks are the ones deciding to sell treasuries, broad money does not increase).
-                        <b>QE does not lead to loan-driven inflation now or in the future, as banks never lend out reserves or are reserve constrained</b>, rather loans create deposits (see <i>"Bank Loan"</i> operation).</li>
-                    <li>QE is sometimes argued to lead to asset price inflation as the holders of now more numerous low yielding deposits and currency may bid up asset prices (stocks, commodities, real estate, etc) in a search for yield, but whether this leads to inflation in the real economy depends on the extent to which this induces a subsequent and ongoing increase in private sector demand for goods and services.
-                        <b>The existence of a transmission mechanism from QE to sustained inflation in goods and services is highly questionable.</b>
-                        Any psychology-driven increase in asset price valuation multiples is unlikely to be sustained, since real earnings underlying the assets are unlikely to grow as fast as expected by who assume QE directly stimulates the economy.
-                        For example, Japan has engaged in multiple rounds of quantitative easing since the early 2000s with no discernable impacts on the real economy and certainly no growth in inflation (Japan has moved in and out of mild deflation). Japan expert Richard Koo calls QE the "greatest monetary non-event."</li>
-                    <li>Ultimately, the private sector controls the size of the broad money supply as a consequence of its borrowing decisions and portfolio adjustment decisions.
-                        Some theory and evidence support the idea that the private sector can "undo" the increase in deposits that results from QE!
-                        See the post <a href="http://www.thoughtofferings.com/2011/06/visual-guide-to-endogenous-money-and.html">"A Visual Guide to Endogenous Money and the Failure of QE"</a> and its predecessors for a detailed explanation.</li>
+                    <li><b> L'assouplissement quantitatif consiste simplement à échanger un type d'actifs figurant dans les bilans du secteur privé (généralement des bons du Trésor) contre un autre type (dépôts garantis par des réserves bancaires, ou simplement des réserves bancaires si une banque a procédé à la vente.)</b></li>
+                    <li>QE modifie effectivement la composition de la durée des engagements publics en cours en faveur d'un plus grand nombre d'engagements à court terme et d'un moins grand nombre d'engagements à long terme.
+                        En tant que telle, elle est à peu près équivalente à celle d'une émission de bons du Trésor (courte durée) et d'une émission d'obligations (longue durée).
+                    <li>Aucun secteur (ou entité au sein d'un secteur) ne voit de changement dans les capitaux propres du bilan comme résultat direct de l'EQ.
+                        Par conséquent, <b>il n'y a pas d'augmentation significative du pouvoir d'achat du secteur privé ou de sa propension à dépenser</b>.
+                        Au niveau de chaque ménage ou entreprise susceptible de vendre à la Fed pendant l'EQ, les décisions concernant la composition du portefeuille d'investissement tendent à être prises indépendamment des décisions concernant le montant à dépenser ou à détenir dans un portefeuille d'investissement</b> &mdash ; ainsi, une modification de la composition du portefeuille (espèces, obligations, actions, etc.) n'entraînera pas de dépenses supplémentaires.
+                        De plus, les bons du Trésor sont presque aussi liquides que de l'"argent" et toute personne détenant auparavant des bons du Trésor aurait pu facilement les vendre pour soutenir toute dépense planifiée.</li>
+                    <li>Le bilan de la banque centrale se développe au fur et à mesure qu'elle puise dans les actifs du secteur privé et crée de nouveaux passifs (réserves) en conséquence.
+                    <li>Les théoriciens monétaires modernes soulignent que, d'un point de vue macroéconomique, <b> l'EQ comprend une impulsion déflationniste</b> parce qu'elle remplace un actif à rendement plus élevé (les bons du Trésor) par un actif à rendement plus faible (l'argent), ce qui réduit les intérêts payés au secteur privé par le gouvernement !
+                        En tant que telle, elle est comparable à la suppression de certaines mesures de relance budgétaire, bien que l'ampleur de l'impact sur la demande globale puisse varier dans chaque cas en fonction du ciblage (c'est-à-dire que les personnes qui gagnent des revenus sous forme de bons du Trésor peuvent avoir une propension à dépenser différente de celle des bénéficiaires initiaux des dépenses liées aux mesures de relance budgétaire.)</li>
+                    <li>La monnaie au sens large et la monnaie de base augmentent toutes deux lorsque les ménages procèdent à la vente (cependant, lorsque ce sont les banques qui décident de vendre des bons du Trésor, la monnaie au sens large n'augmente pas).
+                        <b> L'EQ ne conduit pas à une inflation induite par les prêts, ni maintenant ni à l'avenir, car les banques ne prêtent jamais de réserves ou sont soumises à des contraintes de réserves</b>, les prêts créant plutôt des dépôts (voir <i> "Prêt bancaire"</i> opération).</li>
+                    <li>On prétend parfois que l'EQ entraîne une inflation des prix des actifs car les détenteurs de dépôts et de devises à faible rendement, désormais plus nombreux, peuvent faire monter les prix des actifs (actions, matières premières, immobilier, etc.) dans une recherche de rendement, mais la question de savoir si cela entraîne une inflation dans l'économie réelle dépend de la mesure dans laquelle cela induit une augmentation ultérieure et continue de la demande de biens et de services du secteur privé.</li>
+                        <b>L'existence d'un mécanisme de transmission de l'EQ à une inflation soutenue des biens et services est très discutable.</b>
+                        Toute augmentation des multiples d'évaluation des prix des actifs motivée par la psychologie a peu de chances de se maintenir, car les bénéfices réels sous-jacents aux actifs ne devraient pas croître aussi vite que prévu par ceux qui supposent que l'EQ stimule directement l'économie.
+                        Par exemple, le Japon s'est engagé dans de multiples séries d'assouplissement quantitatif depuis le début des années 2000 sans impact discernable sur l'économie réelle et certainement pas de croissance de l'inflation (le Japon a connu une légère déflation). L'expert japonais Richard Koo qualifie l'assouplissement quantitatif de "plus grand non-événement monétaire". </li>
+                    <li>En fin de compte, le secteur privé contrôle la taille de la masse monétaire au sens large en conséquence de ses décisions d'emprunt et d'ajustement du portefeuille.
+                        Certaines théories et preuves soutiennent l'idée que le secteur privé peut "défaire" l'augmentation des dépôts qui résulte de l'EQ !
+                        Voir le post <a href="http://www.thoughtofferings.com/2011/06/visual-guide-to-endogenous-money-and.html">"Un guide visuel de la monnaie endogène et de l'échec de l'EQ"</a> et ses prédécesseurs pour une explication détaillée.</li>
                 </ul>
             </div>
             <div id="qebanks" style="display:none">
                 <ul>
-                    <li>Quantitative Easing (QE) involves the central bank buying treasuries (or in some cases private sector securities) from the private sector by paying with newly created reserves.</li>
-                    <li>This example shows <i>commercial banks</i> selling treasuries (via the primary dealers as intermediaries, who as such may choose to sell some of their own treasuries).
-                        However, any private sector entities can sell treasuries (via the primary dealers) during QE, including households, businesses, pension funds, etc.</li>
+                    <li> L'assouplissement quantitatif (EQ) implique que la banque centrale achète des bons du Trésor (ou dans certains cas des titres du secteur privé) au secteur privé en payant avec les réserves nouvellement créées.</li>
+                    <li>Cet exemple montre que les banques commerciales vendent des bons du Trésor (par l'intermédiaire des négociants principaux, qui peuvent choisir de vendre certains de leurs propres bons du Trésor).
+                        Cependant, toutes les entités du secteur privé peuvent vendre des bons du Trésor (par l'intermédiaire des négociants principaux) pendant l'EQ, y compris les ménages, les entreprises, les fonds de pension, etc.</li>
                 </ul><ul>
-                    <li>Please see the similar operation <i>"Quantitative Easing (Variation 1 - Households Sell)"</i> for detailed commentary.</li>
+                    <li>Veuillez consulter l'opération similaire <i> "Assouplissement quantitatif (Variation 1 - Vente aux ménages)"</i> pour un commentaire détaillé.</li>
                 </ul>
             </div>
             <div id="omoraiserates" style="display:none">
                 <ul>
-                    <li>During open market operations to push the overnight interest rate <i>up</i> toward the current target rate, the central bank sells treasuries to banks, who pay with reserves (thus swapping reserves for treasuries on the asset side of their balance sheet).</li>
+                    <li>Lors d'opérations d'open market visant à pousser le taux d'intérêt au jour le jour <i>up</i> vers le taux cible actuel, la banque centrale vend des bons du Trésor aux banques, qui paient avec des réserves (échangeant ainsi des réserves contre des bons du Trésor à l'actif de leur bilan).</li>
                 </ul><ul>
-                    <li>Open market operations by the central bank are used to set the supply of reserves in the banking system in order that the short-term (overnight) interest rate hits the central bank's policy target.
-                        <b>The central bank is really targeting rates, not targeting specific quantities of reserves</b>, though quantities do change as part of the process.</li>
-                    <li>To raise the overnight rate toward the policy target, the central bank sells government debt, in exchange debiting reserves from the banking system.
-                        This decreases the supply of reserves that are loanable between banks in the overall banking system (banks need reserves to meet reserve requirements and clear payments), thus raising the overnight interest rate toward the current target rate.
-                    <li>The operation shown represents traditional open market operations, but central banks use other tools as well, such as:
-                        <ul><li>The discount rate (also known as the penalty rate) is the rate at which banks can borrow directly from the central bank.</li>
-                            <li>Recently the US central bank (Federal Reserve) has paid interest on reserves at a support rate, which sets a floor for interest rates as a means of achieving the target rate.</li></ul>
+                    <li>Les opérations d'open market de la banque centrale sont utilisées pour fixer l'offre de réserves dans le système bancaire afin que le taux d'intérêt à court terme (au jour le jour) atteigne l'objectif de la politique de la banque centrale.
+                        <b>La banque centrale vise réellement les taux, et non des quantités spécifiques de réserves</b>, bien que les quantités changent dans le cadre du processus.</li>
+                    <li>Pour faire monter le taux au jour le jour vers l'objectif de la politique monétaire, la banque centrale vend la dette publique, en échange de quoi elle débite les réserves du système bancaire.
+                        Cela diminue l'offre de réserves pouvant être prêtées entre les banques dans l'ensemble du système bancaire (les banques ont besoin de réserves pour répondre aux exigences en matière de réserves et pour effectuer des paiements), ce qui fait augmenter le taux d'intérêt au jour le jour vers le taux cible actuel.
+                    <li>L'opération présentée représente les opérations traditionnelles d'open market, mais les banques centrales utilisent également d'autres outils, tels que :
+                        <ul><li>Le taux d'escompte (également appelé taux de pénalité) est le taux auquel les banques peuvent emprunter directement auprès de la banque centrale.</li>
+                            <li> Récemment, la banque centrale américaine (Réserve fédérale) a payé des intérêts sur les réserves à un taux de soutien, qui fixe un plancher pour les taux d'intérêt comme moyen d'atteindre le taux cible.</li></ul>
                     </li>
                 </ul>
             </div>
             <div id="omolowerrates" style="display:none">
                 <ul>
-                    <li>During open market operations to push the overnight interest rate <i>down</i> toward the current target rate, the central bank buys treasuries from banks, who receive reserves as payment (thus swapping treasuries for reserves on the asset side of their balance sheet).</li>
-                    <li>If you get an "Invalid Operation" error running this, try the operation <i>"Open Market Ops: Raise Rates Toward Target"</i> first to ensure some treasuries are on banks' balance sheet in the visualizer.</li>
+                    <li>Lors d'opérations d'open market visant à pousser le taux d'intérêt au jour le jour <i>en baisse</i> vers le taux cible actuel, la banque centrale achète des bons du Trésor aux banques, qui reçoivent des réserves en paiement (échangeant ainsi des bons du Trésor contre des réserves à l'actif de leur bilan).</li>
+                    <li>Si vous obtenez une erreur "Invalid Operation" en cours d'exécution, essayez d'abord l'opération <i> "Open Market Ops : Raise Rates Toward Target"</i> pour vous assurer que certains bons du Trésor figurent au bilan des banques dans le visualiseur.</li>
                 </ul><ul>
-                    <li>Open market operations by the central bank are used to set the supply of reserves in the banking system in order that the short-term (overnight) interest rate hits the central bank's policy target.
-                        <b>The central bank is really targeting rates, not targeting specific quantities of reserves</b>, though quantities do change as part of the process.</li>
-                    <li>To lower the overnight rate toward the policy target, the central bank buys government debt and pays with newly created reserves, thus increasing the supply of reserves that are loanable between banks in the overall banking system (banks need reserves to meet reserve requirements and clear payments).
-                        This lowers the interest rate toward the current target rate.
-                    <li>The operation shown represents traditional open market operations, but central banks use other tools as well, such as:
-                        <ul><li>The discount rate (also known as the penalty rate) is the rate at which banks can borrow directly from the central bank.</li>
-                            <li>Recently the US central bank (Federal Reserve) has paid interest on reserves at a support rate, which sets a floor for interest rates as a means of achieving the target rate.</li></ul>
+                    <li>Les opérations d'open market de la banque centrale sont utilisées pour fixer l'offre de réserves dans le système bancaire afin que le taux d'intérêt à court terme (au jour le jour) atteigne l'objectif de la politique de la banque centrale.
+                        <b>La banque centrale vise réellement les taux, et non des quantités spécifiques de réserves</b>, bien que les quantités changent dans le cadre du processus.</li>
+                    <li>Pour abaisser le taux au jour le jour vers l'objectif de la politique monétaire, la banque centrale achète la dette publique et paie avec les réserves nouvellement créées, augmentant ainsi l'offre de réserves qui peuvent être prêtées entre les banques dans le système bancaire global (les banques ont besoin de réserves pour répondre aux exigences en matière de réserves et effectuer des paiements).
+                        Cela permet d'abaisser le taux d'intérêt vers le taux cible actuel.
+                    <li>L'opération présentée représente les opérations traditionnelles d'open market, mais les banques centrales utilisent également d'autres outils, tels que :
+                        <ul><li>Le taux d'escompte (également appelé taux de pénalité) est le taux auquel les banques peuvent emprunter directement auprès de la banque centrale.</li>
+                            <li> Récemment, la banque centrale américaine (Réserve fédérale) a payé des intérêts sur les réserves à un taux de soutien, qui fixe un plancher pour les taux d'intérêt comme moyen d'atteindre le taux cible.</li></ul>
                     </li>
                 </ul>
             </div>
             <div id="governmentdebtissuancettl" style="display:none">
                 <ul>
-                    <li>In this example, a commercial bank (known as a Special Depository) buys debt issued by the treasury.</li>
+                    <li>Dans cet exemple, une banque commerciale (connue sous le nom de Dépositaire Spécial) achète une dette émise par le trésor public. </li>
                 </ul><ul>
-                    <li>This is step two of the process outlined by <a href="http://neweconomicperspectives.blogspot.com/2010/11/yes-government-bonds-add-to-private.html">Stephanie Kelton in this blog post</a>. As she notes:</li>
-                    <li>The treasury sells debt to the commercial bank, and the commercial bank pays for these bonds by crediting the treasury's TT&L (Treasury Tax & Loan) account.</li>
-                    <li>This is analogous to a bank acquiring a loan by crediting the borrower's account. It does not "cost" the bank anything. No existing resources (reserves) are spent when the bond is acquired.</li>
-                    <li>The commercial bank gets the bonds (assets) and the treasury gets a credit to its TT&L account at the commercial bank.</li>
+                    <li>Il s'agit de la deuxième étape du processus décrit par <a href="http://neweconomicperspectives.blogspot.com/2010/11/yes-government-bonds-add-to-private.html">Stephanie Kelton dans cet article de blog</a>. Comme elle le note :</li>
+                    <li>Le Trésor public vend des titres de créance à la banque commerciale, qui paie ces obligations en créditant le compte TT&L (Treasury Tax & Loan) du Trésor public.</li>
+                    <li>C'est comme une banque qui acquiert un prêt en créditant le compte de l'emprunteur. Cela ne "coûte" rien à la banque. Aucune ressource existante (réserves) n'est dépensée lorsque l'obligation est acquise.</li>
+                    <li>La banque commerciale reçoit les obligations (actifs) et le Trésor public obtient un crédit sur son compte de transfert et de transfert de fonds auprès de la banque commerciale.</li>
                 </ul>
             </div>
             <div id="treasurymovesttl" style="display:none">
                 <ul>
-                    <li>In this example, the treasury plans to spend and places a "call" on its TT&L (Treasury Tax & Loan) account at a commercial bank &mdash; this involves it moving funds from an account at the commercial bank to an account at the central bank.</li>
+                    <li>Dans cet exemple, le Trésor public prévoit de dépenser et fait un "appel" sur son compte TT&L (Treasury Tax & Loan) auprès d'une banque commerciale &mdash ; cela implique qu'il déplace des fonds d'un compte de la banque commerciale vers un compte de la banque centrale.</li>
                 </ul><ul>
-                    <li>This is step three of the process outlined by <a href="http://neweconomicperspectives.blogspot.com/2010/11/yes-government-bonds-add-to-private.html">Stephanie Kelton in this blog post</a>. As she notes:</li>
-                    <li>In anticipation of its imminent spending, the treasury places a "call" on its TT&L account.</li>
-                    <li>This is a formal direction that instructs the commercial bank to transfer funds from its TT&L account to the treasury's account at the central bank.</li>
-                    <li>Because the treasury is moving its account out of the commercial bank, the commercial bank experiences a loss of reserves.</li>
-                    <li>The central bank changes its balance sheet to indicate that the treasury has added to its account at the central bank, and commercial bank has reduced its reserve account.</li>
+                    <li>Il s'agit de la troisième étape du processus décrit par <a href="http://neweconomicperspectives.blogspot.com/2010/11/yes-government-bonds-add-to-private.html">Stephanie Kelton dans cet article de blog</a>. Comme elle le note :</li>
+                    <li>En prévision de ses dépenses imminentes, le Trésor public fait un "appel" à son compte TT&L.</li>
+                    <li>Il s'agit d'une instruction formelle qui donne à la banque commerciale l'ordre de transférer des fonds de son compte TT&L vers le compte du Trésor à la banque centrale.</li>
+                    <li>Parce que le Trésor public déplace son compte hors de la banque commerciale, la banque commerciale subit une perte de réserves.</li>
+                    <li>La banque centrale modifie son bilan pour indiquer que le trésor public a alimenté son compte à la banque centrale et que la banque commerciale a réduit son compte de réserve.</li>
                 </ul>
             </div>
         </div>

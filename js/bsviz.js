@@ -54,10 +54,10 @@ function z(a, b, c, f) {
     return e
 };
 var ba = {
-        "-1": "Base Money is a measure of private sector assets that are central bank liabilities, specifically:\\- bank reserves\\- currency (notes and coins) in bank vaults\\- currency (notes and coins) in circulation",
-        "-2": "Broad Money is a measure of private sector money excluding assets of banks, specifically:\\- bank deposits\\- currency (notes and coins) in circulation\\Note: there are various measures of broad money (M1, M2, M3, MZM, etc) outside the scope of this visualizer.",
+        "-1": "La base monétaire est une mesure des actifs du secteur privé qui sont des passifs de la banque centrale, à savoir : les réserves bancaires, les devises (billets et pièces) dans les coffres des banques, les devises (billets et pièces) en circulation",
+        "-2": "La monnaie au sens large est une mesure de la monnaie du secteur privé à l'exclusion des actifs des banques, à savoir : les dépôts bancaires ; la monnaie (billets et pièces) en circulation ; Il y a plusieurs définitions de monnaie (M1, M2, M3, MZM, etc.),",
         "-3": "Credit",
-        "-4": "Private Debt includes all debt liabilities of private sector entities (e.g., corporate bonds or loans to households.)"
+        "-4": "La dette privée comprend toutes les dettes des entités du secteur privé (par exemple, les obligations d'entreprises ou les prêts aux ménages)"
     },
     ca = "black",
     B = 70,
@@ -369,10 +369,10 @@ function M(a) {
     for (n = a.Ma.length; j < n; j++) e += a.Ma[j].Wa(), h += a.Ma[j].Oa;
     a.ob = h;
     h > b && (b = h, c = e);
-    a.Va == l && !a.$a && (a.Va = new ga(0, 0, 0, "equity", "Equity", "", 2, 0), a.Va.setScale(a.scale), ma(a.Va, a.Ua));
+    a.Va == l && !a.$a && (a.Va = new ga(0, 0, 0, "equity", "NFAs", "", 2, 0), a.Va.setScale(a.scale), ma(a.Va, a.Ua));
     a.$a || (G(a.Va, Math.abs(a.lb - a.ob)), a.Va.Nb = a.nb != l ? a.nb : "Balance Sheet Equity (also called Capital or Net Worth) is calculated as Assets minus Liabilities. It can be negative if liabilities exceed assets.");
     if (a.ob > a.lb) {
-        a.$a || (F(a.Va, a.x, a.y - Math.round(a.ob / a.scale)), ja(a.Va, "Neg.Equity"));
+        a.$a || (F(a.Va, a.x, a.y - Math.round(a.ob / a.scale)), ja(a.Va, "Neg. NFAs"));
         j = h = e = 0;
         for (n = a.La.length; j < n; j++) F(a.La[j], a.x, a.y - e - a.La[j].Wa()), e += a.La[j].Wa(), h += a.La[j].Oa;
         j = h = e = 0;
@@ -382,7 +382,7 @@ function M(a) {
         for (n = a.La.length; j < n; j++) F(a.La[j], a.x, a.y - e - a.La[j].Wa()), e += a.La[j].Wa(), h += a.La[j].Oa;
         if (!a.$a) {
             F(a.Va, a.x + B + 10, a.y - Math.round(a.lb / a.scale));
-            ja(a.Va, "Equity");
+            ja(a.Va, "NFAs");
             j = h = e = 0;
             for (n = a.Ma.length; j < n; j++) F(a.Ma[j],
                 a.x + B + 10, a.y - e - a.Ma[j].Wa()), e += a.Ma[j].Wa(), h += a.Ma[j].Oa
@@ -507,8 +507,8 @@ ya.prototype.Db = function () {
         h = 0;
         for (j = e.Ma.length; h < j; h++) b += e.Ma[h].Oa
     }
-    0 < a && (0 == this.La.length ? N(this, 1, a, "assetAggregate", "Assets", "This aggregate asset block sums up all the asset blocks in the balance sheets immediately below (grouped by the green line).") : G(this.La[0], a));
-    0 < b && (0 == this.Ma.length ? P(this, 2, b, "liabilityAggregate", "Liabilities", "This aggregate liability block sums up all the liability blocks in the balance sheets immediately below (grouped by the green line).") :
+    0 < a && (0 == this.La.length ? N(this, 1, a, "assetAggregate", "Actifs", "This aggregate asset block sums up all the asset blocks in the balance sheets immediately below (grouped by the green line).") : G(this.La[0], a));
+    0 < b && (0 == this.Ma.length ? P(this, 2, b, "liabilityAggregate", "Passifs", "This aggregate liability block sums up all the liability blocks in the balance sheets immediately below (grouped by the green line).") :
         G(this.Ma[0], b));
     M(this);
     return k
