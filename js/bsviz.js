@@ -369,10 +369,10 @@ function M(a) {
     for (n = a.Ma.length; j < n; j++) e += a.Ma[j].Wa(), h += a.Ma[j].Oa;
     a.ob = h;
     h > b && (b = h, c = e);
-    a.Va == l && !a.$a && (a.Va = new ga(0, 0, 0, "equity", "NFAs", "", 2, 0), a.Va.setScale(a.scale), ma(a.Va, a.Ua));
-    a.$a || (G(a.Va, Math.abs(a.lb - a.ob)), a.Va.Nb = a.nb != l ? a.nb : "Balance Sheet Equity (also called Capital or Net Worth) is calculated as Assets minus Liabilities. It can be negative if liabilities exceed assets.");
+    a.Va == l && !a.$a && (a.Va = new ga(0, 0, 0, "equity", "AFNs", "", 2, 0), a.Va.setScale(a.scale), ma(a.Va, a.Ua));
+    a.$a || (G(a.Va, Math.abs(a.lb - a.ob)), a.Va.Nb = a.nb != l ? a.nb : "Les Actifs Financiers Nets (AFNs) sont calculés comme suit : actifs moins passif. Les AFNs peuvent être négatifs si les passifs sont supérieurs aux actifs.");
     if (a.ob > a.lb) {
-        a.$a || (F(a.Va, a.x, a.y - Math.round(a.ob / a.scale)), ja(a.Va, "Neg. NFAs"));
+        a.$a || (F(a.Va, a.x, a.y - Math.round(a.ob / a.scale)), ja(a.Va, "Neg. AFNs"));
         j = h = e = 0;
         for (n = a.La.length; j < n; j++) F(a.La[j], a.x, a.y - e - a.La[j].Wa()), e += a.La[j].Wa(), h += a.La[j].Oa;
         j = h = e = 0;
@@ -382,7 +382,7 @@ function M(a) {
         for (n = a.La.length; j < n; j++) F(a.La[j], a.x, a.y - e - a.La[j].Wa()), e += a.La[j].Wa(), h += a.La[j].Oa;
         if (!a.$a) {
             F(a.Va, a.x + B + 10, a.y - Math.round(a.lb / a.scale));
-            ja(a.Va, "NFAs");
+            ja(a.Va, "AFNs");
             j = h = e = 0;
             for (n = a.Ma.length; j < n; j++) F(a.Ma[j],
                 a.x + B + 10, a.y - e - a.Ma[j].Wa()), e += a.Ma[j].Wa(), h += a.Ma[j].Oa
@@ -507,8 +507,8 @@ ya.prototype.Db = function () {
         h = 0;
         for (j = e.Ma.length; h < j; h++) b += e.Ma[h].Oa
     }
-    0 < a && (0 == this.La.length ? N(this, 1, a, "assetAggregate", "Actifs", "This aggregate asset block sums up all the asset blocks in the balance sheets immediately below (grouped by the green line).") : G(this.La[0], a));
-    0 < b && (0 == this.Ma.length ? P(this, 2, b, "liabilityAggregate", "Passifs", "This aggregate liability block sums up all the liability blocks in the balance sheets immediately below (grouped by the green line).") :
+    0 < a && (0 == this.La.length ? N(this, 1, a, "assetAggregate", "Actifs", "Ce bloc représente l'agrégat des actifs dans les bilans du niveau inférieurs.") : G(this.La[0], a));
+    0 < b && (0 == this.Ma.length ? P(this, 2, b, "liabilityAggregate", "Passifs", "Ce bloc représente l'agrégat du passif de passifs dans les bilans du niveau inférieurs.") :
         G(this.Ma[0], b));
     M(this);
     return k
@@ -706,65 +706,65 @@ function Da(a) {
     a.Ta = new K("Treasury (Federal Government)", n, 570);
     L(a.Ta, "treasuryBS");
     A = a.Ta;
-    A.nb = "Without the treasury's negative equity (liabilities exceeding financial assets), it would not be possible for the private sector to have a positive financial net worth. Note that this entire visualizer excludes tangible assets in order to focus on financials.";
+    A.nb = "Sans les AFNs négatifs du Trésor (les passifs dépassant les actifs financiers), il ne serait pas possible pour le secteur privé d'avoir des AFN positives. Notez que l'ensemble de ce visualiseur exclut les actifs matériels afin de se concentrer sur les actifs financiers.";
     M(A);
-    N(a.Ta, 2, 40, "reserves", "T.Deposits", "Treasury Deposits are the Treasury's account balance at the Central Bank, used for government spending. The size is small and sovereign governments are not dependent on 'saving up' in order to spend in the future.");
+    N(a.Ta, 2, 40, "reserves", "T.Deposits", "Ce bloc représente le solde du compte du Trésor auprès de la Banque centrale.");
     N(a.Ta, 9, 0, "ttl", "T T & L", "Treasury Tax & Loan Accounts (TT&L) are Treasury account balances held at commercial banks. These balances are used in the settlement process when Special Depository banks participate in auctions of treasury debt.");
-    P(a.Ta, 3, 210, "treasuries", "Treasuries", "The Treasury's Liabilities (bonds, bills and notes) facilitate private sector savings. The private sector's savings desires predominantly determine the size of the treasury's debt (liabilities), assisted by the automatic stabilizers. Treasury liabilities exceed financial assets by design!");
+    P(a.Ta, 3, 210, "treasuries", "Treasuries", "Le passif du Trésor est constitué par des titres d'état (des obligations, des bons et des billets). Les désirs d'épargne du secteur privé influencent le montant de la dette du Trésor (passif) au moyen des stabilisateurs automatiques.");
     U(a.Ta);
     a.zb.appendChild(a.Ta.Ua);
     n += C + 35;
     a.Ra = new K("Central Bank (Federal Government)", n, 570);
     L(a.Ra, "centralBankBS");
     A = a.Ra;
-    A.nb = "Central Banks maintain a small positive buffer of equity (capital). Their solvency is never a concern because (a) they hold mostly high quality assets that earn income, (b) they need not mark assets to market, and (c) various forms of recapitalization by treasury are possible if ever they were needed.";
+    A.nb = "Les banques centrales maintiennent habituellement un petit stock d'AFN. Leur solvabilité n'est jamais un problème car (a) elles détiennent principalement des actifs de haute qualité qui génèrent des revenus, (b) elles n'ont pas besoin d'évaluer les actifs à la valeur du marché, et (c) diverses formes de recapitalisation par le Trésor sont possibles si jamais elles étaient nécessaires. Dans certains pays le bilan de la BC presente des PFN (Passifs Financier Nets). Dans ce cas, comme pour le Trésor, le PFN du secteur public represente une AFN du secteur privé.";
     M(A);
-    N(a.Ra, 3, 170, "treasuries", "Treasuries", 'One role of central banks is to "transform" treasury liabilities into currency, so they hold treasuries as assets. They may also hold private sector securities. The income from these assets adds to equity, so central banks periodically remit these earnings to the treasury.');
-    P(a.Ra, 1, 40, "currency", "Currency", "Currency (physical notes and coins) is a liability of the central bank.");
-    P(a.Ra, 2, 120, "reserves", "Deposits", "The majority of the central bank's deposits are reserve balances held within the banking system, though the treasury also has an account at the central bank.");
+    N(a.Ra, 3, 170, "treasuries", "Titres d'État", 'le role des banques centrales est de transformer les passifs du Trésor en monnaie, de sorte que elles détiennent les trésors en tant que actifs. Elles peuvent également détenir des titres du secteur privé. Les revenus de ces actifs s ajoutent aux capitaux propres, de sorte que les banques centrales remettent périodiquement ces gains au Trésor.');
+    P(a.Ra, 1, 40, "currency", "Cash", "La monnaie physique (billets et pièces) est un passif de la banque centrale.");
+    P(a.Ra, 2, 120, "reserves", "Réserves", "La majorité des dépôts de la banque centrale sont des soldes de réserve détenus au sein du système bancaire, bien que le Trésor public ait également un compte à la banque centrale.");
     U(a.Ra);
     a.zb.appendChild(a.Ra.Ua);
     n += C + 35;
-    a.Ja = new K("Banks", n, 570);
+    a.Ja = new K("Banques", n, 570);
     L(a.Ja, "bankBS");
     A = a.Ja;
-    A.nb = "Bank Equity is specifically referred to as Capital. A bank becomes insolvent if its assets (typically loans) fall too far in value, turning equity negative (or at least below regulatory minimums.) Bank lending is capital constrained (temporarily, capital can be injected) but never reserve constrained.";
+    A.nb = "Les AFNs des banques sont spécifiquement désignés sous le terme de capital. Une banque devient insolvable si la valeur de ses actifs (généralement des prêts) chute trop, rendant les fonds propres négatifs (ou du moins en dessous des minimums réglementaires.) Les prêts bancaires sont soumis à des contraintes de capital (temporairement, des capitaux peuvent être injectés) mais jamais à des contraintes de réserves.";
     M(A);
-    N(a.Ja, 1, 40, "currency", "Currency", "Banks hold currency (physical notes and coins) in vaults in a sufficient quantity to meet the withdrawal demands of their customers. Currency and reserve balances are interchangeable from the central bank as needed.");
-    N(a.Ja, 2, 80, "reserves", "Reserves", 'Bank reserve balances are electronic accounting entries and liabilities of the central bank, and are equivalent to currency. Reserve balances provide interbank liquidity for the payments system (e.g., a when a check clears reserves are transferred between banks.) Banks never "lend out" reserves!');
-    N(a.Ja, 3, 0, "treasuries", "Treasuries", "Banks may hold treasuries and other assets in addition to their loans, currency, and reserve balances.");
+    N(a.Ja, 1, 40, "currency", "Cash", "Les banques conservent dans des coffres-forts des espèces (billets et pièces physiques) en quantité suffisante pour répondre aux demandes de retrait de leurs clients. Le cash et les soldes de réserves sont interchangeables avec la banque centrale si nécessaire.");
+    N(a.Ja, 2, 80, "reserves", "Réserves", 'Les soldes de réserve bancaire sont des écritures comptables électroniques et des engagements de la banque centrale, et sont équivalents au cash. Les soldes de réserve fournissent des liquidités interbancaires pour le système de paiement (par exemple, lorsqu un chèque compense des réserves transférées entre banques). ');
+    N(a.Ja, 3, 0, "treasuries", "Titres d'État", "Les banques peuvent détenir des trésors et d'autres actifs en plus de leurs prêts, du cash et des soldes de réserve.");
     N(a.Ja, 4, 0, "ib-asset", "Interbank",
-        "Asset corresponding to reserves lent to other banks in the overnight market.");
-    N(a.Ja, 4, 0, "loans", "Loans", "When banks make loans they may hold them as assets on their balance sheets (or loans can be packaged and sold as securities). Interest paid by borrowers is a source of bank earnings. Writedowns and defaults shrink the value of loans, reducing bank capital (equity).");
-    P(a.Ja, 5, 80, "deposits", "Deposits", "Customer deposits are the primary source of funding for banks, though they can also borrow in other ways (e.g., issuing bonds). Banks usually pay customers interest on their deposits, but make up for this cost via earning higher interest rates on loans, charging fees to customers, etc.");
+        "Actif correspondant aux réserves prêtées à d'autres banques sur le marché au jour le jour.");
+    N(a.Ja, 4, 0, "loans", "Prêts", "Lorsque les banques accordent des prêts, elles peuvent les conserver comme actifs dans leur bilan (ou les prêts peuvent être conditionnés et vendus comme des titres). Les intérêts payés par les emprunteurs sont une source de revenus pour les banques. Les dépréciations et les défauts de paiement réduisent la valeur des prêts, ce qui diminue le capital des banques.");
+    P(a.Ja, 5, 80, "deposits", "Dépôts", "Les dépôts des clients sont la principale source de financement des banques, bien qu'elles puissent également emprunter d'autres manières (par exemple, en émettant des obligations). Les banques versent généralement aux clients des intérêts sur leurs dépôts, mais compensent ce coût en obtenant des taux d'intérêt plus élevés sur les prêts, en facturant des frais aux clients, etc.");
     P(a.Ja, 9, 0, "ttl", "T T & L", "Treasury Tax & Loan Accounts (TT&L) are Treasury account balances held at commercial banks. These balances are used in the settlement process when Special Depository banks participate in auctions of treasury debt.");
     U(a.Ja);
     a.qb.appendChild(a.Ja.Ua);
     n += C + 35;
-    a.Ka = new K("Households", n, 570);
+    a.Ka = new K("Ménages", n, 570);
     L(a.Ka, "householdBS");
     A = a.Ka;
-    A.nb = "Household net worth is usually positive, because on aggregate households are generally net savers. Within the household sector, some households have negative net worth (e.g., students with loans, 'underwater' homeowners, etc) while others have positive net worth (e.g., retirees with savings accounts.)";
+    A.nb = "Les AFNs des ménages sont positives, car globalement, les ménages sont des épargnants nets. Dans le secteur des ménages, certains ménages ont une valeur nette négative (par exemple, les étudiants avec des prêts,  etc.) alors que d'autres ont une valeur nette positive (par exemple, les retraités avec des comptes d'épargne.)";
     M(A);
-    N(a.Ka, 1, 0, "currency", "Currency", "Households may choose to hold physical currency (notes and coins) either to use for cash transactions or simply as a form of savings.");
-    N(a.Ka, 5, 40, "deposits", "Deposits", "Most households have one or more checking or savings accounts at banks, and these assets are called bank deposits. The bank based payment system credits and debits various depositors' accounts as payments are made by check, electronic transfer, etc.");
-    N(a.Ka, 3, 40, "treasuries", "Treasuries", "Households may hold government treasuries as one form of savings.");
-    N(a.Ka, 6, 0, "bonds", "Bonds", "Households may buy corporate bonds and hold them as a form of savings.");
-    P(a.Ka, 4, 0, "loans", "Loans", "Households often borrow to make purchases (e.g., cars, homes, education, furniture, etc.) The loans are a liability that must be paid off over time and on which regular interest payments are usually due.");
+    N(a.Ka, 1, 0, "currency", "Cash", "Les ménages peuvent choisir de détenir de l'argent physique (billets et pièces), soit pour effectuer des transactions en espèces, soit simplement comme forme d'épargne.");
+    N(a.Ka, 5, 40, "deposits", "Réserves", "La plupart des ménages possèdent un ou plusieurs comptes courants ou d'épargne dans les banques, et ces actifs sont appelés dépôts bancaires. Le système de paiement bancaire crédite et débite les comptes de divers déposants, car les paiements sont effectués par chèque, par transfert électronique, etc.");
+    N(a.Ka, 3, 40, "treasuries", "Titres d'État", "La plupart des ménages possèdent un ou plusieurs comptes courants ou d'épargne dans les banques, et ces actifs sont appelés dépôts bancaires. Le système de paiement bancaire crédite et débite des dépôts bancaires les comptes de divers clients, lorsque les paiements sont effectués par chèque, par transfert électronique, etc.");
+    N(a.Ka, 6, 0, "bonds", "Obligations", "Les ménages peuvent acheter des obligations d'entreprises et les détenir comme une forme d'épargne.");
+    P(a.Ka, 4, 0, "loans", "Prêts", "Les ménages empruntent souvent pour faire des achats (par exemple, voitures, maisons, éducation, meubles, etc.) Les prêts sont un passif qui doit être remboursé au fil du temps et sur lequel des paiements d'intérêts réguliers sont généralement dus.");
     U(a.Ka);
     a.qb.appendChild(a.Ka.Ua);
     n += C + 35;
-    a.Na = new K("Companies (+ foreign sector, misc)", n, 570);
+    a.Na = new K("Entreprises (+ étranger, misc)", n, 570);
     n = a.Na;
-    n.nb = "Companies usually have positive net worth because profits add to balance sheet equity. (But consistently unprofitable companies may become insolvent.)";
+    n.nb = "Les entreprises ont généralement une bilan d'AFN positive. Mais les entreprises constamment non rentables peuvent devenir insolvables.";
     M(n);
-    N(a.Na, 1, 0, "currency", "Currency", "Companies may choose to hold some assets as physical currency (notes and coins). An example would be businesses that accept cash payments.");
-    N(a.Na, 5, 40, "deposits", "Deposits", "Like households, companies hold some assets as bank deposits that they can use for buying inventory, paying employees, making investments, etc.");
-    N(a.Na, 3, 0, "treasuries", "Treasuries", "Like households, companies may choose to hold government treasuries as one form of asset.");
+    N(a.Na, 1, 0, "currency", "Cash", "Les entreprises peuvent choisir de détenir certains actifs sous forme de monnaie physique (billets et pièces). C'est le cas, par exemple, des entreprises qui acceptent les paiements en espèces.");
+    N(a.Na, 5, 40, "deposits", "Dépôts", "Comme les ménages, les entreprises détiennent certains actifs sous forme de dépôts bancaires qu'elles peuvent utiliser pour acheter des stocks, payer leurs employés, faire des investissements, etc.");
+    N(a.Na, 3, 0, "treasuries", "Titres d'État", "Comme les ménages, les entreprises peuvent choisir de détenir des fonds publics comme une forme d'actif.");
     N(a.Na, 6, 0,
-        "securitizedloans", "Secur. Loans", "A securitized loan is one that has been transferred from a bank's balance sheet to an investor's (or investment company's) balance sheet, typically as part of a pooled purchase. It is similar to a bond in that it is a form of private debt/borrowing that on net does not increase the broad money supply.");
-    P(a.Na, 4, 0, "loans", "Loans", "Like households, companies can borrow from banks.");
-    P(a.Na, 6, 0, "bonds", "Bonds", "Some companies can issue bonds to fund themselves. Other possible forms of borrowing or funding include money markets, bank loans, and capital raises (not shown here).");
+        "securitizedloans", "Prêts titrisés", "Un prêt titrisé est un prêt qui a été transféré du bilan d'une banque au bilan d'un investisseur (ou d'une société d'investissement), généralement dans le cadre d'un achat groupé. Il est similaire à une obligation en ce sens qu'il s'agit d'une forme de dette/emprunt privé qui, sur le plan net, n'augmente pas la masse monétaire au sens large.");
+    P(a.Na, 4, 0, "loans", "Prêts", "Comme les ménages, les entreprises peuvent emprunter auprès des banques.");
+    P(a.Na, 6, 0, "bonds", "Obligations", "Certaines entreprises peuvent émettre des obligations pour se financer. Les autres formes d'emprunt ou de financement possibles sont les marchés monétaires, les prêts bancaires et les levées de fonds (non illustrés ici).");
     U(a.Na);
     a.qb.appendChild(a.Na.Ua);
     R(a.Ta, "treasuries", a.Ra, "treasuries");
@@ -785,19 +785,19 @@ function Da(a) {
     R(a.Na, "loans", a.Ja, "loans");
     R(a.Na, "bonds", a.Ka, "bonds");
     n = 15 + C + 35;
-    a.yb = new ya("Federal Government Sector (aggregate)", n, 250, [a.Ta, a.Ra]);
+    a.yb = new ya("Secteur public (agrégat)", n, 250, [a.Ta, a.Ra]);
     a.yb.setScale(4);
     U(a.yb);
     a.sb.appendChild(a.yb.Ua);
     A = n;
     n += C + 35;
-    a.Bb = new ya("Private Sector (aggregate)", n, 250, [a.Ja, a.Ka, a.Na]);
+    a.Bb = new ya("Secteur privé (agrégat)", n, 250, [a.Ja, a.Ka, a.Na]);
     a.Bb.setScale(4);
     U(a.Bb);
     a.sb.appendChild(a.Bb.Ua);
     t = n;
     n = 15 + C + 35 + (C + 35) / 2;
-    a.Cb = new ya("Total Economy (aggregate)", n, 105, [a.Bb, a.yb]);
+    a.Cb = new ya("Totale (agrégat)", n, 105, [a.Bb, a.yb]);
     a.Cb.setScale(8);
     U(a.Cb);
     a.tb.appendChild(a.Cb.Ua);
@@ -831,19 +831,19 @@ function Da(a) {
     a.sb.appendChild(O);
     a.tb.appendChild(n);
     n = na + 10;
-    a.gb = new za("Base Money", n, 250, -1, [a.Ja, a.Ka, a.Na]);
+    a.gb = new za("Base Monetaire", n, 250, -1, [a.Ja, a.Ka, a.Na]);
     L(a.gb, "baseMoneyStat");
     a.gb.setScale(2);
     U(a.gb);
     a.rb.appendChild(a.gb.Ua);
     n += B + a.$b;
-    a.hb = new za("Broad Money", n, 250, -2, [a.Ka, a.Na]);
+    a.hb = new za("BM + Credit", n, 250, -2, [a.Ka, a.Na]);
     L(a.hb, "broadMoneyStat");
     a.hb.setScale(2);
     U(a.hb);
     a.rb.appendChild(a.hb.Ua);
     n += B + a.$b;
-    a.pb = new za("Private Debt", n, 250, -4, [a.Ja, a.Ka, a.Na]);
+    a.pb = new za("BM + C + Crédit Privé", n, 250, -4, [a.Ja, a.Ka, a.Na]);
     L(a.pb, "privateDebtStat");
     a.pb.setScale(2);
     U(a.pb);
@@ -1147,35 +1147,35 @@ var Ma = o,
     Z = {
         Pa: -1,
         Ya: [
-            ["privatespending", k, "To start, observe how spending transfers assets (and financial net worth) between balance sheets within the private sector."],
-            ["governmentspending", k, "Government spending results in an equivalent transfer of assets (and financial net worth) TO the private sector."],
-            ["governmenttaxes", k, "Government taxation reduces the financial net worth of the private sector so as to limit potential spending and inflationary pressures. When available economic capacity is limited, taxation can also make room for the politically desired level of government spending."],
+            ["privatespending", k, "Pour commencer, observez comment les dépenses transfèrent les actifs (les AFNs) entre les bilans au sein du secteur privé."],
+            ["governmentspending", k, "Les dépenses publiques entraînent un transfert d'AFNs  vers le secteur privé."],
+            ["governmenttaxes", k, "La fiscalité publique réduit la valeur nette financière du secteur privé afin de limiter les dépenses potentielles et les pressions inflationnistes. Lorsque la capacité économique disponible est limitée, la fiscalité peut également faire place au niveau de dépenses publiques politiquement souhaité."],
             ["governmentspending",
-                k, "For this step the government will spend again in preparation for the next step."
+                k, "Pour cette étape, le gouvernement dépensera à nouveau pour préparer l'étape suivante."
             ],
-            ["governmentdebtissuance", k, "Government bond issuance comes after government spending and simply gives the private sector a longer duration asset in exchange for money (i.e., it's an asset swap)."],
+            ["governmentdebtissuance", k, "L'émission d'obligations d'État vient après les dépenses publiques et donne simplement au secteur privé un actif de plus longue durée en échange d'argent (c'est un échange d'actifs)."],
             ["consolidatedgovernmentspending", k, "A combined operation (government spending plus debt issuance) shows how government deficits supply the private sector with financial savings in the form of government liabilities."],
             ["consolidatedgovernmentspending", o, "This step runs the combined operation in reverse so the balance sheets don't grow too large for this visualizer."],
-            ["governmentspendingnobonds", k, "A sovereign government does not need to 'raise money' before it can spend, and this combined operation demonstrates why."],
+            ["governmentspendingnobonds", k, "Un gouvernement souverain n'a pas besoin de collecter des fonds avant de pouvoir les dépenser, et cette opération combinée montre pourquoi."],
             ["governmentspendingnobonds", o, "This step runs the combined operation in reverse so the balance sheets don't grow too large for this visualizer."],
-            ["governmentspending", k, "For this step the government will spend again in preparation for later steps."],
-            ["withdrawcurrency", k, "Customers can withdraw physical cash from their bank deposit accounts."],
-            ["depositcurrency", k, "Customers can deposit physical cash into bank accounts."],
-            ["bankloan", k, "Banks make loans to credit-worthy borrowers (thus creating deposits) and lending is never constrained by how many reserves banks have!"],
-            ["bankloaninterest", k, "Borrowers make regular interest payments to banks. [In real life, interest payments would be much smaller relative to original loan size than shown here.]"],
-            ["bankloanrepayment", k, "Borrowers repay loan principal over time, typically as they earn the necessary income, thus reversing the balance sheet impacts of the original loan."],
-            ["bankloan", k, "This step creates another bank loan in preparation for the next step."],
-            ["bankloandefault", k, "Borrower defaults on bank loans are comparable to a gift of balance sheet net worth from banks to borrowers, which is why banks only want to lend to credit-worthy borrowers."],
-            ["bondissuance", k, "When they need money, companies can issue bonds as an alternative to borrowing from banks. (There are additional funding options also, such as the commercial paper market)."],
-            ["bondinterest", k, "Companies make interest payments on their outstanding bonds. [In real life, interest payments would be much smaller relative to original bond size than shown here.]"],
-            ["bondrepayment", k, "Companies repay the principal on bonds as the bonds come due (bonds have fixed duration)."],
-            ["bondissuance", k, "This step enacts another corporate bond issuance in preparation for the next step."],
-            ["bonddefault", k, "Companies can default on their bond obligations just like bank borrowers can default on bank loans."],
-            ["bankloan", k, "This step creates another bank loan in preparation for the next step."],
-            ["bankloansecuritize", k, "Securitization packages loans as bond-like securities that can be sold to investors."],
-            ["qe", k, "Quantitative easing by a central bank is essentially an asset swap that replaces long duration assets in the private sector with short duration assets (either reserves or bank deposits plus reserves)."],
-            ["omoraiserates", k, "Central banks traditionally use open market operations to defend their current target overnight interest rate. While the rate is below target, the central bank sells treasuries (withdrawing reserves) to drive the rate up toward target."],
-            ["omolowerrates", k, "Conversely, while the overnight rate is above target, the central bank adds buys treasuries (adding reserves to the banking system) to drive the rate down toward target."]
+            ["governmentspending", k, "Cette étape exécute l'opération combinée en sens inverse afin que les bilans ne deviennent pas trop volumineux pour ce visualiseur."],
+            ["withdrawcurrency", k, "Les clients peuvent retirer des espèces physiques de leurs comptes de dépôt bancaires."],
+            ["depositcurrency", k, "Les clients peuvent déposer des espèces sur des comptes bancaires."],
+            ["bankloan", k, "Les banques accordent des prêts à des emprunteurs solvables (créant ainsi des dépôts) et les prêts ne sont jamais limités par le nombre de réserves dont disposent les banques !"],
+            ["bankloaninterest", k, "Les emprunteurs versent régulièrement des intérêts aux banques. (Dans la vie réelle, les paiements d'intérêts seraient beaucoup plus faibles par rapport à la taille initiale du prêt que ce qui est indiqué ici)."],
+            ["bankloanrepayment", k, "Les emprunteurs remboursent le capital du prêt au fil du temps, généralement au fur et à mesure qu'ils gagnent les revenus nécessaires, inversant ainsi les effets du prêt initial sur le bilan."],
+            ["bankloan", k, "Cette étape crée un autre prêt bancaire en préparation de l'étape suivante."],
+            ["bankloandefault", k, "Les défauts de paiement des emprunteurs sur les prêts bancaires sont comparables à un don de la valeur nette du bilan des banques aux emprunteurs, c'est pourquoi les banques ne veulent prêter qu'à des emprunteurs solvables."],
+            ["bondissuance", k, "Lorsqu'elles ont besoin d'argent, les entreprises peuvent émettre des obligations comme alternative aux emprunts auprès des banques. (Il existe également d'autres options de financement, comme le marché des billets de trésorerie)."],
+            ["bondinterest", k, "Les entreprises versent des intérêts sur leurs obligations en circulation. (Dans la vie réelle, les paiements d'intérêts seraient beaucoup plus faibles par rapport à la taille originale des obligations que ce qui est indiqué ici)."],
+            ["bondrepayment", k, "Les entreprises remboursent le capital des obligations au fur et à mesure de leur échéance (les obligations ont une durée fixe)."],
+            ["bondissuance", k, "Cette étape donne lieu à une nouvelle émission d'obligations de sociétés en préparation de l'étape suivante."],
+            ["bonddefault", k, "Les entreprises peuvent manquer à leurs obligations tout comme les emprunteurs bancaires peuvent manquer à leurs obligations en matière de prêts bancaires."],
+            ["bankloan", k, "Cette étape crée un autre prêt bancaire en préparation de l'étape suivante."],
+            ["bankloansecuritize", k, "La titrisation regroupe les prêts sous forme de titres semblables à des obligations qui peuvent être vendus aux investisseurs"],
+            ["qe", k, "L'assouplissement quantitatif par une banque centrale est essentiellement un échange d'actifs qui remplace les actifs de longue durée dans le secteur privé par des actifs de courte durée (soit des réserves ou des dépôts bancaires plus des réserves)."],
+            ["omoraiserates", k, "Les banques centrales utilisent traditionnellement les opérations d'open market pour défendre leur taux d'intérêt cible actuel au jour le jour. Lorsque le taux est inférieur à l'objectif, la banque centrale vend des bons du Trésor (en retirant des réserves) pour faire monter le taux vers l'objectif."],
+            ["omolowerrates", k, "À l'inverse, si le taux au jour le jour est supérieur à l'objectif, la banque centrale ajoute des achats de bons du Trésor (ajoutant des réserves au système bancaire) pour faire baisser le taux vers l'objectif."]
         ],
         reset: function () {
             Z.Pa = -1;

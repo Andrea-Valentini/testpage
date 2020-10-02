@@ -100,11 +100,10 @@
         </p>
         <div id="notesDiv">
             <ul>
-                <li>L'objectif de cet outil est de fournir une aide à la visualisation et à la compréhension des concepts importants en macroéconomie.</b></span>.
-                    Il presente des points clé de la MMT </li>
-                <li>Pour en savoir plus sur la théorie économique, veuillez consulter les blogs des auteurs  MMT  <a href="http://bilbo.economicoutlook.net/blog/?cat=11">Bill Mitchell</a> ou <a href="http://moslereconomics.com/">Warren Mosler</a>. Le livre de Mosler, <a href="http://moslereconomics.com/2009/12/10/7-deadly-innocent-frauds/">Seven Deadly Innocent Frauds of Economic Policy</a>est une introduction plus brève, destinée à un plus grand public.
-                    Une version en plusieurs parties de <a href="http://neweconomicperspectives.blogspot.com/p/modern-money-primer.html">Modern Money Primer</a> est disponible sur le site "New Economic Pserspectives".
-                    Voici également des documents de la FED et d'autres sources "fiables".  (comme par exemple <a href="http://www.bis.org/publ/work292.htm">ce docuòent de la BIS</a>) qui soutiennent cette compréhension moderne des prêts bancaires, des réserves et des concepts connexes.</li>
+                <li>L'objectif de cet outil est de fournir une aide à la visualisation et à la compréhension des concepts importants en macroéconomie.</b></span>
+                    avec la MMT (Modern Monetary Theory) </li>
+                <li>Pour en savoir plus sur la théorie économique, veuillez consulter le blog MMT France  <a href="http://https://mmt-france.org/"> MMT France </a>.
+                    Voici également des documents de la FED et d'autres sources "fiables".  (comme par exemple <a href="http://www.bis.org/publ/work292.htm">ce document de la BIS</a>) qui soutiennent cette compréhension moderne des prêts bancaires, des réserves et des concepts connexes.</li>
                 
                 <!--<li>Please post corrections and constructive feedback to the comments section of this <a href="http://www.thoughtofferings.com/2010/02/macroeconomic-balance-sheet-visualizer.html">placeholder blog post</a>, or email me at hbl{{at}}econviz[[dot]]org.</li-->
             </ul>
@@ -117,12 +116,12 @@
         </p>
         <div id="tipsDiv">
             <ul>
-                <li>La différence entre les actifs et les passifs désigne les AFNs des bilans, également appelés <i>Actif Financiers Nsets</i>.  Ce visualiseur affiche les AFNs négatifs sur le côté gauche des bilans dans un style similaire à celui de <a href ="http://www.calculatedriskblog.com/2009/04/bank-balance-sheet-liquidity-and.html">Calculated risk</a> et <a href="http://www.calculatedriskblog.com/2009/04/bank-balance-sheet-liquidity-and_26.html"></a>.</li>
+                <li>La différence entre les actifs et les passifs désigne les AFNs des bilans, également appelés <i>Actif Financiers Nets</i>.  Ce visualiseur affiche les AFNs négatifs sur le côté gauche des bilans dans un style similaire à celui de <a href ="http://www.calculatedriskblog.com/2009/04/bank-balance-sheet-liquidity-and.html">Calculated risk</a> et <a href="http://www.calculatedriskblog.com/2009/04/bank-balance-sheet-liquidity-and_26.html"></a>.</li>
                 <li>La ligne inférieure des bilans représente des secteurs entiers</b> (par exemple, tous les ménages combinés dans un seul bilan).</li>
                 <li>La ligne <b>moyenne des bilans est la somme en temps réel des bilans inférieurs</b>. Les deux agrégats sont le "secteur public" et le "secteur privé" (en ignorant le secteur étranger, pour des raisons de simplicité, bien qu'il puisse être considéré comme faisant partie de l'agrégat "secteur privé").</li>
                 <li>La ligne supérieure des bilans <b> additionne tout ce qui se trouve en dessous, c'est-à-dire l'ensemble de l'économie,</b> et s'équilibre à zéro AFNs par définition.</li>
                 <li><em> Pointez </em> la souris sur un actif dans la ligne inférieure pour voir tous les passifs correspondants mis en évidence</em> (car chaque actif financier est le passif de quelqu'un d'autre), <em>et vice versa</em>.</li>
-                <li><em> Pointez </em>la souris sur une statistique agrégée (les barres orange de l'argent et de la dette) pour voir de quoi elle est composée</em>.</li>
+                <li><em> Pointez </em>la souris sur les statistiques agrégées (les barres oranges) pour voir de quoi elle sont composées</em>.</li>
                 <li><em>Choisissez </em> une opération dans le menu en dessous des bilans, et cliquez sur "Exécuter l'opération" pour voir la transition des bilans animée.
                     Pour regarder à nouveau, cliquez sur "Reproduction de l'opération".
                     Vous pouvez également cliquer sur "Exécuter l'opération inverse" pour exécuter l'opération à l'envers, puis cliquer à nouveau sur "Run Op".</li>
@@ -203,7 +202,7 @@
             </select>
             <span class="controlLabel">Montant:</span> <input type="text" id="opAmountText" value="30" size="5"/>
             <button onclick="doActionClick()">Exécuter l'opération</button>
-            <button onclick="replayActionClick()" id="replayOpButton" disabled="disabled">Replay Op</button>
+            <button onclick="replayActionClick()" id="replayOpButton" disabled="disabled">Replay</button>
             <button onclick="reverseActionClick()">Exécuter l'opération inverse</button>
             <button onclick="resetBalanceSheetsClick()">Réinitialiser le diagramme</button>
             <div id="errorLabel" class="errorLabel"><b>Opération non valable</b>: Un ou plusieurs bilans présentent un actif ou un passif insuffisant. Essayez d'abord une autre opération ou réinitialisez les bilans.</div>
