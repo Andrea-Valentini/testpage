@@ -1,3 +1,5 @@
+
+  
 var g = void 0,
     k = !0,
     l = null,
@@ -703,25 +705,25 @@ function Da(a) {
     t.setAttribute("style", "font-size: 12px; font-style: italic; font-family: arial,sans-serif; fill: black;");
     a.rb.appendChild(t);
     n = 15;
-    a.Ta = new K("Treasury (Federal Government)", n, 570);
+    a.Ta = new K("Ministère du Trésor", n, 570);
     L(a.Ta, "treasuryBS");
     A = a.Ta;
-    A.nb = "Sans les AFNs négatifs du Trésor (les passifs dépassant les actifs financiers), il ne serait pas possible pour le secteur privé d'avoir des AFN positives. Notez que l'ensemble de ce visualiseur exclut les actifs matériels afin de se concentrer sur les actifs financiers.";
+    A.nb = "Sans les AFNs négatifs du Trésor (les passifs dépassant les actifs financiers), il ne serait pas possible pour le secteur privé d'avoir des AFN positives. ";
     M(A);
-    N(a.Ta, 2, 40, "reserves", "T.Deposits", "Ce bloc représente le solde du compte du Trésor auprès de la Banque centrale.");
+    N(a.Ta, 2, 40, "reserves", "Réserves", "Ce bloc représente le solde du compte du Trésor auprès de la Banque centrale.");
     N(a.Ta, 9, 0, "ttl", "T T & L", "Treasury Tax & Loan Accounts (TT&L) are Treasury account balances held at commercial banks. These balances are used in the settlement process when Special Depository banks participate in auctions of treasury debt.");
-    P(a.Ta, 3, 210, "treasuries", "Treasuries", "Le passif du Trésor est constitué par des titres d'état (des obligations, des bons et des billets). Les désirs d'épargne du secteur privé influencent le montant de la dette du Trésor (passif) au moyen des stabilisateurs automatiques.");
+    P(a.Ta, 3, 210, "treasuries", "Titres d'Etat", "Le passif du Trésor est constitué par des titres d'état (des obligations, des bons et des billets). Les désirs d'épargne du secteur privé influencent le montant de la dette du Trésor (passif) au moyen des stabilisateurs automatiques.");
     U(a.Ta);
     a.zb.appendChild(a.Ta.Ua);
     n += C + 35;
     a.Ra = new K("Central Bank (Federal Government)", n, 570);
     L(a.Ra, "centralBankBS");
     A = a.Ra;
-    A.nb = "Les banques centrales maintiennent habituellement un petit stock d'AFN. Leur solvabilité n'est jamais un problème car (a) elles détiennent principalement des actifs de haute qualité qui génèrent des revenus, (b) elles n'ont pas besoin d'évaluer les actifs à la valeur du marché, et (c) diverses formes de recapitalisation par le Trésor sont possibles si jamais elles étaient nécessaires. Dans certains pays le bilan de la BC presente des PFN (Passifs Financier Nets). Dans ce cas, comme pour le Trésor, le PFN du secteur public represente une AFN du secteur privé.";
+    A.nb = "Les banques centrales ont généralement stock d'AFN (héritage du gold-standard). Toutefois, dans certains pays le bilan de la BC presente des AFNs négatifs. Dans ce cas, comme pour le Trésor, les AFNs négatifs du secteur public representent des AFNs du secteur privé.";
     M(A);
-    N(a.Ra, 3, 170, "treasuries", "Titres d'État", 'le role des banques centrales est de transformer les passifs du Trésor en monnaie, de sorte que elles détiennent les trésors en tant que actifs. Elles peuvent également détenir des titres du secteur privé. Les revenus de ces actifs s ajoutent aux capitaux propres, de sorte que les banques centrales remettent périodiquement ces gains au Trésor.');
+    N(a.Ra, 3, 170, "treasuries", "Titres d'État", 'Le role des banques centrales est de transformer les passifs du Trésor en monnaie, de sorte que elles détiennent les trésors en tant que actifs. Elles peuvent également détenir des titres du secteur privé.');
     P(a.Ra, 1, 40, "currency", "Cash", "La monnaie physique (billets et pièces) est un passif de la banque centrale.");
-    P(a.Ra, 2, 120, "reserves", "Réserves", "La majorité des dépôts de la banque centrale sont des soldes de réserve détenus au sein du système bancaire, bien que le Trésor public ait également un compte à la banque centrale.");
+    P(a.Ra, 2, 120, "reserves", "Réserves", "La majorité des dépôts de la banque centrale sont des soldes de réserve détenus au sein du système bancaire et dans le compte du Trésor.");
     U(a.Ra);
     a.zb.appendChild(a.Ra.Ua);
     n += C + 35;
@@ -744,10 +746,10 @@ function Da(a) {
     a.Ka = new K("Ménages", n, 570);
     L(a.Ka, "householdBS");
     A = a.Ka;
-    A.nb = "Les AFNs des ménages sont positives, car globalement, les ménages sont des épargnants nets. Dans le secteur des ménages, certains ménages ont une valeur nette négative (par exemple, les étudiants avec des prêts,  etc.) alors que d'autres ont une valeur nette positive (par exemple, les retraités avec des comptes d'épargne.)";
+    A.nb = "Les AFNs des ménages sont globalement positives. Dans le secteur des ménages, certains ménages ont une valeur nette négative (par exemple, les étudiants avec des prêts,  etc.) alors que d'autres ont une valeur nette positive (par exemple, les retraités avec des comptes d'épargne.)";
     M(A);
     N(a.Ka, 1, 0, "currency", "Cash", "Les ménages peuvent choisir de détenir de l'argent physique (billets et pièces), soit pour effectuer des transactions en espèces, soit simplement comme forme d'épargne.");
-    N(a.Ka, 5, 40, "deposits", "Réserves", "La plupart des ménages possèdent un ou plusieurs comptes courants ou d'épargne dans les banques, et ces actifs sont appelés dépôts bancaires. Le système de paiement bancaire crédite et débite les comptes de divers déposants, car les paiements sont effectués par chèque, par transfert électronique, etc.");
+    N(a.Ka, 5, 40, "deposits", "Dépôts", "La plupart des ménages possèdent un ou plusieurs comptes courants ou d'épargne dans les banques, et ces actifs sont appelés dépôts bancaires. Le système de paiement bancaire crédite et débite les comptes de divers déposants, car les paiements sont effectués par chèque, par transfert électronique, etc.");
     N(a.Ka, 3, 40, "treasuries", "Titres d'État", "La plupart des ménages possèdent un ou plusieurs comptes courants ou d'épargne dans les banques, et ces actifs sont appelés dépôts bancaires. Le système de paiement bancaire crédite et débite des dépôts bancaires les comptes de divers clients, lorsque les paiements sont effectués par chèque, par transfert électronique, etc.");
     N(a.Ka, 6, 0, "bonds", "Obligations", "Les ménages peuvent acheter des obligations d'entreprises et les détenir comme une forme d'épargne.");
     P(a.Ka, 4, 0, "loans", "Prêts", "Les ménages empruntent souvent pour faire des achats (par exemple, voitures, maisons, éducation, meubles, etc.) Les prêts sont un passif qui doit être remboursé au fil du temps et sur lequel des paiements d'intérêts réguliers sont généralement dus.");
@@ -756,7 +758,7 @@ function Da(a) {
     n += C + 35;
     a.Na = new K("Entreprises (+ étranger, misc)", n, 570);
     n = a.Na;
-    n.nb = "Les entreprises ont généralement une bilan d'AFN positive. Mais les entreprises constamment non rentables peuvent devenir insolvables.";
+    n.nb = "Les entreprises ont généralement une bilan d'AFNs positives. Mais les entreprises constamment non rentables peuvent devenir insolvables.";
     M(n);
     N(a.Na, 1, 0, "currency", "Cash", "Les entreprises peuvent choisir de détenir certains actifs sous forme de monnaie physique (billets et pièces). C'est le cas, par exemple, des entreprises qui acceptent les paiements en espèces.");
     N(a.Na, 5, 40, "deposits", "Dépôts", "Comme les ménages, les entreprises détiennent certains actifs sous forme de dépôts bancaires qu'elles peuvent utiliser pour acheter des stocks, payer leurs employés, faire des investissements, etc.");
@@ -831,19 +833,19 @@ function Da(a) {
     a.sb.appendChild(O);
     a.tb.appendChild(n);
     n = na + 10;
-    a.gb = new za("Base Monetaire", n, 250, -1, [a.Ja, a.Ka, a.Na]);
+    a.gb = new za("Passif Banque Centrale", n, 250, -1, [a.Ja, a.Ka, a.Na]);
     L(a.gb, "baseMoneyStat");
     a.gb.setScale(2);
     U(a.gb);
     a.rb.appendChild(a.gb.Ua);
     n += B + a.$b;
-    a.hb = new za("BM + Credit", n, 250, -2, [a.Ka, a.Na]);
+    a.hb = new za("Banking", n, 250, -2, [a.Ka, a.Na]);
     L(a.hb, "broadMoneyStat");
     a.hb.setScale(2);
     U(a.hb);
     a.rb.appendChild(a.hb.Ua);
     n += B + a.$b;
-    a.pb = new za("BM + C + Crédit Privé", n, 250, -4, [a.Ja, a.Ka, a.Na]);
+    a.pb = new za("Shadow-banking", n, 250, -4, [a.Ja, a.Ka, a.Na]);
     L(a.pb, "privateDebtStat");
     a.pb.setScale(2);
     U(a.pb);
@@ -1149,7 +1151,7 @@ var Ma = o,
         Ya: [
             ["privatespending", k, "Pour commencer, observez comment les dépenses transfèrent les actifs (les AFNs) entre les bilans au sein du secteur privé."],
             ["governmentspending", k, "Les dépenses publiques entraînent un transfert d'AFNs  vers le secteur privé."],
-            ["governmenttaxes", k, "La fiscalité publique réduit la valeur nette financière du secteur privé afin de limiter les dépenses potentielles et les pressions inflationnistes. Lorsque la capacité économique disponible est limitée, la fiscalité peut également faire place au niveau de dépenses publiques politiquement souhaité."],
+            ["governmenttaxes", k, "La fiscalité publique réduit la valeur nette financière du secteur privé."],
             ["governmentspending",
                 k, "Pour cette étape, le gouvernement dépensera à nouveau pour préparer l'étape suivante."
             ],
