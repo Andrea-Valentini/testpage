@@ -833,7 +833,7 @@ function Da(a) {
     a.sb.appendChild(O);
     a.tb.appendChild(n);
     n = na + 10;
-    a.gb = new za("Passif Banque Centrale", n, 250, -1, [a.Ja, a.Ka, a.Na]);
+    a.gb = new za("Passifs BC", n, 250, -1, [a.Ja, a.Ka, a.Na]);
     L(a.gb, "baseMoneyStat");
     a.gb.setScale(2);
     U(a.gb);
