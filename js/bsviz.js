@@ -539,7 +539,7 @@ za.prototype.Db = function () {
                 if (4 == b.ab || 6 == b.ab) a += b.Oa
         }
     }
-    0 == this.La.length ? N(this, 10, a, "stat", "Total", ba[this.Zb]) : G(this.La[0], a);
+ //   0 == this.La.length ? N(this, 10, a, "stat", "Total", ba[this.Zb]) : G(this.La[0], a);
     M(this);
     return k
 };
@@ -689,8 +689,8 @@ function Da(a) {
     a.sb.appendChild(t);
     t = v(j, 15, n, 100, "#E8E8E8", "aggBgRect");
     a.tb.appendChild(t);
-    t = v(na, 125, A, 135, "#FFFFC0", "statBgRect");
-    a.rb.appendChild(t);
+//    t = v(na, 125, A, 135, "#FFFFC0", "statBgRect");
+//    a.rb.appendChild(t);
     t = l;
     t = z(c + f + 5, 285, "Scale: 1/1", "priScaleLabel");
     t.setAttribute("style", "font-size: 12px; font-style: italic; font-family: arial,sans-serif; fill: black;");
@@ -701,16 +701,16 @@ function Da(a) {
     t = z(j + n + 5, 30, "Scale: 1/8", "aggScaleLabel");
     t.setAttribute("style", "font-size: 12px; font-style: italic; font-family: arial,sans-serif; fill: black;");
     a.tb.appendChild(t);
-    t = z(na + A + 5, 140, "Scale: 1/2", "statScaleLabel");
-    t.setAttribute("style", "font-size: 12px; font-style: italic; font-family: arial,sans-serif; fill: black;");
-    a.rb.appendChild(t);
+//    t = z(na + A + 5, 140, "Scale: 1/2", "statScaleLabel");
+//    t.setAttribute("style", "font-size: 12px; font-style: italic; font-family: arial,sans-serif; fill: black;");
+//    a.rb.appendChild(t);
     n = 15;
     a.Ta = new K("Ministère du Trésor", n, 570);
     L(a.Ta, "treasuryBS");
     A = a.Ta;
     A.nb = "Sans les AFNs négatifs du Trésor (les passifs dépassant les actifs financiers), il ne serait pas possible pour le secteur privé d'avoir des AFN positives. ";
     M(A);
-    N(a.Ta, 2, 40, "reserves", "Réserves", "Ce bloc représente le solde du compte du Trésor auprès de la Banque centrale.");
+    N(a.Ta, 2, 40, "reserves", "Dépôts T.", "Ce bloc représente le solde du compte du Trésor auprès de la Banque centrale.");
     N(a.Ta, 9, 0, "ttl", "T T & L", "Treasury Tax & Loan Accounts (TT&L) are Treasury account balances held at commercial banks. These balances are used in the settlement process when Special Depository banks participate in auctions of treasury debt.");
     P(a.Ta, 3, 210, "treasuries", "Titres d'Etat", "Le passif du Trésor est constitué par des titres d'état (des obligations, des bons et des billets). Les désirs d'épargne du secteur privé influencent le montant de la dette du Trésor (passif) au moyen des stabilisateurs automatiques.");
     U(a.Ta);
@@ -832,20 +832,22 @@ function Da(a) {
     n.appendChild(x);
     a.sb.appendChild(O);
     a.tb.appendChild(n);
+    /*
+
     n = na + 10;
-    a.gb = new za("Passifs BC", n, 250, -1, [a.Ja, a.Ka, a.Na]);
+    a.gb = new za("", n, 250, -1, [a.Ja, a.Ka, a.Na]);
     L(a.gb, "baseMoneyStat");
     a.gb.setScale(2);
     U(a.gb);
     a.rb.appendChild(a.gb.Ua);
     n += B + a.$b;
-    a.hb = new za("Banking", n, 250, -2, [a.Ka, a.Na]);
+    a.hb = new za("", n, 250, -2, [a.Ka, a.Na]);
     L(a.hb, "broadMoneyStat");
     a.hb.setScale(2);
     U(a.hb);
     a.rb.appendChild(a.hb.Ua);
     n += B + a.$b;
-    a.pb = new za("Shadow-banking", n, 250, -4, [a.Ja, a.Ka, a.Na]);
+    a.pb = new za("", n, 250, -4, [a.Ja, a.Ka, a.Na]);
     L(a.pb, "privateDebtStat");
     a.pb.setScale(2);
     U(a.pb);
@@ -861,6 +863,7 @@ function Da(a) {
     R(a.pb, "stat", a.Ka, "loans");
     R(a.pb, "stat", a.Na, "bonds");
     R(a.pb, "stat", a.Na, "bonds");
+    */
     a.cb.appendChild(a.qb);
     a.cb.appendChild(a.zb);
     a.cb.appendChild(a.sb);
