@@ -317,7 +317,7 @@ q.Yb = function (a, b, c, f) {
     this.Ab.appendChild(this.cc);
     this.Ua.appendChild(this.Ab);
     this.$a || (this.fb = document.createElementNS(svgns,
-        "text"), this.fb.setAttribute("x", this.x + Math.round(B / 2)), this.fb.setAttribute("y", 0), this.fb.setAttribute("fill", "#606060"), this.fb.setAttribute("font-style", "italic"), this.ec = document.createTextNode("Assets", k), this.fb.appendChild(this.ec), this.Ua.appendChild(this.fb), this.kb = document.createElementNS(svgns, "text"), this.kb.setAttribute("x", this.x + 1.5 * B + 10), this.kb.setAttribute("y", 0), this.kb.setAttribute("fill", "#606060"), this.kb.setAttribute("font-style", "italic"), this.gc = document.createTextNode("Liabilities",
+        "text"), this.fb.setAttribute("x", this.x + Math.round(B / 2)), this.fb.setAttribute("y", 0), this.fb.setAttribute("fill", "#606060"), this.fb.setAttribute("font-style", "italic"), this.ec = document.createTextNode("Actifs", k), this.fb.appendChild(this.ec), this.Ua.appendChild(this.fb), this.kb = document.createElementNS(svgns, "text"), this.kb.setAttribute("x", this.x + 1.5 * B + 10), this.kb.setAttribute("y", 0), this.kb.setAttribute("fill", "#606060"), this.kb.setAttribute("font-style", "italic"), this.gc = document.createTextNode("Passifs",
         k), this.kb.appendChild(this.gc), this.Ua.appendChild(this.kb));
     this.scale = 1;
     M(this);
@@ -716,7 +716,7 @@ function Da(a) {
     U(a.Ta);
     a.zb.appendChild(a.Ta.Ua);
     n += C + 35;
-    a.Ra = new K("Central Bank (Federal Government)", n, 570);
+    a.Ra = new K("Banque Centrale", n, 570);
     L(a.Ra, "centralBankBS");
     A = a.Ra;
     A.nb = "Les banques centrales ont généralement stock d'AFN (héritage du gold-standard). Toutefois, dans certains pays le bilan de la BC presente des AFNs négatifs. Dans ce cas, comme pour le Trésor, les AFNs négatifs du secteur public representent des AFNs du secteur privé.";
