@@ -738,7 +738,7 @@ function Da(a) {
     N(a.Ja, 4, 0, "ib-asset", "Interbank",
         "Actif correspondant aux réserves prêtées à d'autres banques sur le marché au jour le jour.");
     N(a.Ja, 4, 0, "loans", "Prêts", "Les prêts font partie des actifs des banques. Les intérêts payés par les emprunteurs sont une source de AFNs pour les banques par contre les défauts de paiement réduisent la valeur des prêts, ce qui diminue les AFNs des banques.");
-    P(a.Ja, 5, 80, "deposits", "Dépôts", "Les dépôts des clients sont crées par les banques lorsque elles reçoivent des paiments en réserves (par d'autres banques ou par l'Etat) ou lorsque ils font des prêts");
+    P(a.Ja, 5, 120, "deposits", "Dépôts", "Les dépôts des clients sont crées par les banques lorsque elles reçoivent des paiments en réserves (par d'autres banques ou par l'Etat) ou lorsque ils font des prêts");
     P(a.Ja, 9, 0, "ttl", "T T & L", "Treasury Tax & Loan Accounts (TT&L) are Treasury account balances held at commercial banks. These balances are used in the settlement process when Special Depository banks participate in auctions of treasury debt.");
     U(a.Ja);
     a.qb.appendChild(a.Ja.Ua);
@@ -749,7 +749,7 @@ function Da(a) {
     A.nb = "Les AFNs des ménages sont globalement positives. Dans le secteur des ménages, certains ménages ont une valeur nette négative (par exemple, les étudiants avec des prêts,  etc.) alors que d'autres ont une valeur nette positive (par exemple, les retraités avec des comptes d'épargne.)";
     M(A);
     N(a.Ka, 1, 0, "currency", "Cash", "Les ménages peuvent choisir de détenir de l'argent physique (billets et pièces), soit pour effectuer des transactions en espèces, soit simplement comme forme d'épargne.");
-    N(a.Ka, 5, 40, "deposits", "Dépôts", "La plupart des ménages possèdent un ou plusieurs comptes courants ou d'épargne dans les banques, et ces actifs sont appelés dépôts bancaires. ");
+    N(a.Ka, 5, 80, "deposits", "Dépôts", "La plupart des ménages possèdent un ou plusieurs comptes courants ou d'épargne dans les banques, et ces actifs sont appelés dépôts bancaires. ");
     N(a.Ka, 3, 0, "treasuries", "Titres d'État", "Les ménages peuvent acheter des titres d'état et les détenir comme une forme d'épargne.");
     N(a.Ka, 6, 0, "bonds", "Obligations", "Les ménages peuvent acheter des obligations d'entreprises et les détenir comme une forme d'épargne.");
     P(a.Ka, 4, 0, "loans", "Prêts", "Les ménages empruntent souvent pour faire des achats (par exemple, voitures, maisons, éducation, meubles, etc.) Les prêts sont un passif qui doit être remboursé au fil du temps et sur lequel des paiements d'intérêts réguliers sont généralement dus.");
