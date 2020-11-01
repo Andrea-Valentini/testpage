@@ -730,15 +730,15 @@ function Da(a) {
     a.Ja = new K("Banques", n, 570);
     L(a.Ja, "bankBS");
     A = a.Ja;
-    A.nb = "Les AFNs des banques sont spécifiquement désignés sous le terme de capital. Une banque devient insolvable si la valeur de ses actifs (généralement des prêts) chute trop, rendant les fonds propres négatifs (ou du moins en dessous des minimums réglementaires.) Les prêts bancaires sont soumis à des contraintes de capital (temporairement, des capitaux peuvent être injectés) mais jamais à des contraintes de réserves.";
+    A.nb = "Les AFNs des banques sont spécifiquement désignés sous le terme de capital. Une banque devient insolvable si la valeur de ses actifs  chute trop et ses AFNs chutent en dessous des minimums réglementaires. ";
     M(A);
     N(a.Ja, 1, 40, "currency", "Cash", "Les banques conservent dans des coffres-forts des espèces (billets et pièces physiques) en quantité suffisante pour répondre aux demandes de retrait de leurs clients. Le cash et les soldes de réserves sont interchangeables avec la banque centrale si nécessaire.");
-    N(a.Ja, 2, 80, "reserves", "Réserves", 'Les soldes de réserve bancaire sont des écritures comptables électroniques et des engagements de la banque centrale, et sont équivalents au cash. Les soldes de réserve fournissent des liquidités interbancaires pour le système de paiement (par exemple, lorsqu un chèque compense des réserves transférées entre banques). ');
+    N(a.Ja, 2, 80, "reserves", "Réserves", 'Les réserves bancaires sont des écritures comptables électroniques crééés par la BC (équivalents au cash). Les réserves sont utilisées pour les paiements interbancaires.');
     N(a.Ja, 3, 0, "treasuries", "Titres d'État", "Les banques peuvent détenir des trésors et d'autres actifs en plus de leurs prêts, du cash et des soldes de réserve.");
     N(a.Ja, 4, 0, "ib-asset", "Interbank",
         "Actif correspondant aux réserves prêtées à d'autres banques sur le marché au jour le jour.");
-    N(a.Ja, 4, 0, "loans", "Prêts", "Lorsque les banques accordent des prêts, elles peuvent les conserver comme actifs dans leur bilan (ou les prêts peuvent être conditionnés et vendus comme des titres). Les intérêts payés par les emprunteurs sont une source de revenus pour les banques. Les dépréciations et les défauts de paiement réduisent la valeur des prêts, ce qui diminue le capital des banques.");
-    P(a.Ja, 5, 80, "deposits", "Dépôts", "Les dépôts des clients sont la principale source de financement des banques, bien qu'elles puissent également emprunter d'autres manières (par exemple, en émettant des obligations). Les banques versent généralement aux clients des intérêts sur leurs dépôts, mais compensent ce coût en obtenant des taux d'intérêt plus élevés sur les prêts, en facturant des frais aux clients, etc.");
+    N(a.Ja, 4, 0, "loans", "Prêts", "Les prêts font partie des actifs des banques. Les intérêts payés par les emprunteurs sont une source de AFNs pour les banques par contre les défauts de paiement réduisent la valeur des prêts, ce qui diminue les AFNs des banques.");
+    P(a.Ja, 5, 80, "deposits", "Dépôts", "Les dépôts des clients sont crées par les banques lorsque elles reçoivent des paiments en réserves (par d'autres banques ou par l'Etat) ou lorsque ils font des prêts");
     P(a.Ja, 9, 0, "ttl", "T T & L", "Treasury Tax & Loan Accounts (TT&L) are Treasury account balances held at commercial banks. These balances are used in the settlement process when Special Depository banks participate in auctions of treasury debt.");
     U(a.Ja);
     a.qb.appendChild(a.Ja.Ua);
@@ -749,8 +749,8 @@ function Da(a) {
     A.nb = "Les AFNs des ménages sont globalement positives. Dans le secteur des ménages, certains ménages ont une valeur nette négative (par exemple, les étudiants avec des prêts,  etc.) alors que d'autres ont une valeur nette positive (par exemple, les retraités avec des comptes d'épargne.)";
     M(A);
     N(a.Ka, 1, 0, "currency", "Cash", "Les ménages peuvent choisir de détenir de l'argent physique (billets et pièces), soit pour effectuer des transactions en espèces, soit simplement comme forme d'épargne.");
-    N(a.Ka, 5, 40, "deposits", "Dépôts", "La plupart des ménages possèdent un ou plusieurs comptes courants ou d'épargne dans les banques, et ces actifs sont appelés dépôts bancaires. Le système de paiement bancaire crédite et débite les comptes de divers déposants, car les paiements sont effectués par chèque, par transfert électronique, etc.");
-    N(a.Ka, 3, 40, "treasuries", "Titres d'État", "La plupart des ménages possèdent un ou plusieurs comptes courants ou d'épargne dans les banques, et ces actifs sont appelés dépôts bancaires. Le système de paiement bancaire crédite et débite des dépôts bancaires les comptes de divers clients, lorsque les paiements sont effectués par chèque, par transfert électronique, etc.");
+    N(a.Ka, 5, 40, "deposits", "Dépôts", "La plupart des ménages possèdent un ou plusieurs comptes courants ou d'épargne dans les banques, et ces actifs sont appelés dépôts bancaires. ");
+    N(a.Ka, 3, 40, "treasuries", "Titres d'État", "Les ménages peuvent acheter des titres d'état et les détenir comme une forme d'épargne.");
     N(a.Ka, 6, 0, "bonds", "Obligations", "Les ménages peuvent acheter des obligations d'entreprises et les détenir comme une forme d'épargne.");
     P(a.Ka, 4, 0, "loans", "Prêts", "Les ménages empruntent souvent pour faire des achats (par exemple, voitures, maisons, éducation, meubles, etc.) Les prêts sont un passif qui doit être remboursé au fil du temps et sur lequel des paiements d'intérêts réguliers sont généralement dus.");
     U(a.Ka);
