@@ -734,7 +734,7 @@ function Da(a) {
     M(A);
     N(a.Ja, 1, 40, "currency", "Cash", "Les banques conservent dans des coffres-forts des espèces (billets et pièces physiques) en quantité suffisante pour répondre aux demandes de retrait de leurs clients. Le cash et les soldes de réserves sont interchangeables avec la banque centrale si nécessaire.");
     N(a.Ja, 2, 80, "reserves", "Réserves", 'Les réserves bancaires sont des écritures comptables électroniques crééés par la BC (équivalents au cash). Les réserves sont utilisées pour les paiements interbancaires.');
-    N(a.Ja, 3, 0, "treasuries", "Titres d'État", "Les banques peuvent détenir des trésors et d'autres actifs en plus de leurs prêts, du cash et des soldes de réserve.");
+    N(a.Ja, 3, 40, "treasuries", "Titres d'État", "Les banques peuvent détenir des trésors et d'autres actifs en plus de leurs prêts, du cash et des soldes de réserve.");
     N(a.Ja, 4, 0, "ib-asset", "Interbank",
         "Actif correspondant aux réserves prêtées à d'autres banques sur le marché au jour le jour.");
     N(a.Ja, 4, 0, "loans", "Prêts", "Les prêts font partie des actifs des banques. Les intérêts payés par les emprunteurs sont une source de AFNs pour les banques par contre les défauts de paiement réduisent la valeur des prêts, ce qui diminue les AFNs des banques.");
@@ -750,7 +750,7 @@ function Da(a) {
     M(A);
     N(a.Ka, 1, 0, "currency", "Cash", "Les ménages peuvent choisir de détenir de l'argent physique (billets et pièces), soit pour effectuer des transactions en espèces, soit simplement comme forme d'épargne.");
     N(a.Ka, 5, 40, "deposits", "Dépôts", "La plupart des ménages possèdent un ou plusieurs comptes courants ou d'épargne dans les banques, et ces actifs sont appelés dépôts bancaires. ");
-    N(a.Ka, 3, 40, "treasuries", "Titres d'État", "Les ménages peuvent acheter des titres d'état et les détenir comme une forme d'épargne.");
+    N(a.Ka, 3, 0, "treasuries", "Titres d'État", "Les ménages peuvent acheter des titres d'état et les détenir comme une forme d'épargne.");
     N(a.Ka, 6, 0, "bonds", "Obligations", "Les ménages peuvent acheter des obligations d'entreprises et les détenir comme une forme d'épargne.");
     P(a.Ka, 4, 0, "loans", "Prêts", "Les ménages empruntent souvent pour faire des achats (par exemple, voitures, maisons, éducation, meubles, etc.) Les prêts sont un passif qui doit être remboursé au fil du temps et sur lequel des paiements d'intérêts réguliers sont généralement dus.");
     U(a.Ka);
@@ -937,10 +937,10 @@ function Ia(a) {
                 "reserves", a
             ]);
             c.push([b.Ta, "treasuries", a]);
-            c.push([b.Ka, "deposits", -a]);
+            
             c.push([b.Ja, "reserves", -a]);
-            c.push([b.Ja, "deposits", -a]);
-            c.push([b.Ka, "treasuries", a]);
+            
+            c.push([b.Ja, "treasuries", a]);
             b.Sa(c);
             break;
         case "consolidatedgovernmentspending":
@@ -1178,7 +1178,7 @@ var Ma = o,
             ["bonddefault", k, "Les entreprises peuvent manquer à leurs obligations tout comme les emprunteurs bancaires peuvent manquer à leurs obligations en matière de prêts bancaires."],
             ["bankloan", k, "Cette étape crée un autre prêt bancaire en préparation de l'étape suivante."],
             ["bankloansecuritize", k, "La titrisation regroupe les prêts sous forme de titres semblables à des obligations qui peuvent être vendus aux investisseurs"],
-            ["qe", k, "L'assouplissement quantitatif par une banque centrale est essentiellement un échange d'actifs qui remplace les actifs de longue durée dans le secteur privé par des actifs de courte durée (soit des réserves ou des dépôts bancaires plus des réserves)."],
+            ["qebanks", k, "L'assouplissement quantitatif par une banque centrale est essentiellement un échange d'actifs qui remplace les actifs de longue durée dans le secteur privé par des actifs de courte durée (soit des réserves ou des dépôts bancaires plus des réserves)."],
             ["omoraiserates", k, "Les banques centrales utilisent traditionnellement les opérations d'open market pour défendre leur taux d'intérêt cible actuel au jour le jour. Lorsque le taux est inférieur à l'objectif, la banque centrale vend des bons du Trésor (en retirant des réserves) pour faire monter le taux vers l'objectif."],
             ["omolowerrates", k, "À l'inverse, si le taux au jour le jour est supérieur à l'objectif, la banque centrale ajoute des achats de bons du Trésor (ajoutant des réserves au système bancaire) pour faire baisser le taux vers l'objectif."]
         ],
