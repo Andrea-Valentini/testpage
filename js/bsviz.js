@@ -510,7 +510,7 @@ ya.prototype.Db = function () {
         for (j = e.Ma.length; h < j; h++) b += e.Ma[h].Oa
     }
     0 < a && (0 == this.La.length ? N(this, 1, a, "assetAggregate", "Actifs", "Ce bloc représente l'agrégat des actifs dans les bilans du niveau inférieurs.") : G(this.La[0], a));
-    0 < b && (0 == this.Ma.length ? P(this, 2, b, "liabilityAggregate", "Passifs", "Ce bloc représente l'agrégat du passif de passifs dans les bilans du niveau inférieurs.") :
+    0 < b && (0 == this.Ma.length ? P(this, 2, b, "liabilityAggregate", "Passifs", "Ce bloc représente l'agrégat des passifs dans les bilans du niveau inférieurs.") :
         G(this.Ma[0], b));
     M(this);
     return k
